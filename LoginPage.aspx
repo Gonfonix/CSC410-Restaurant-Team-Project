@@ -33,7 +33,7 @@
                     <asp:Label ID="lblUserName" runat="server" Text="User name:"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtUserID" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -51,6 +51,15 @@
             </tr>
         </table>
         <br />
+
+        <asp:SqlDataSource ID="sdsLogin" runat="server"
+            ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>"
+            SelectCommand="SELECT * FROM [dbo.Customer] WHERE (([Username] = @Username) AND ([Password] = @Password))">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="txtUserName" Name="Username" PropertyName="Text" Type="String" />
+                <asp:ControlParameter ControlID="txtPassword" Name="Password" PropertyName="Text" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
 
         <asp:Label ID="lblStatus" runat="server" Text="" EnableViewState="false"></asp:Label>
         <br />
