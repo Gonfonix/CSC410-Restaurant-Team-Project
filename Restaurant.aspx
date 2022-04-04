@@ -28,7 +28,7 @@
                     <td><h4>At Cindric’s Taco palace our mission is to provide only the freshest ingredients, brining joy and laughter, while providing educational entertainment. </h4></td>
                 </tr>
                 <tr>
-                    <td><h5>SOmthing can go here</h5></td>
+                    <td><h5>somthing can go here</h5></td>
                 </tr>
             </table>
         </div>
