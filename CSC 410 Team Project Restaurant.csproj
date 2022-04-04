@@ -72,6 +72,7 @@
     <Content Include="Restaurant.aspx" />
     <Content Include="Resveration.aspx" />
     <Content Include="Staff.aspx" />
+    <Content Include="Style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

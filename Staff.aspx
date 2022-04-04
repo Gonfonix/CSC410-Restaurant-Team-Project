@@ -4,9 +4,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link rel="stylesheet" href="Style.css" />
     <title>About our staff and their accomplishments</title>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="LoginPage.aspx">Login</a></li>
+            <li><a href="Restaurant.aspx">Our Values</a></li>
+            <li><a href="Resveration.aspx">Make a resveration</a></li>
+            <li><a href="Staff.aspx">Staff</a></li>
+        </ul>
+    </nav>
     <form id="form1" runat="server">
         <div>
             <h2>About our staff and their accomplishments</h2>

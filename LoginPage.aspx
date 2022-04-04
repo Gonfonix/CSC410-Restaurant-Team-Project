@@ -4,9 +4,19 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Login Page</title>
+     <link rel="stylesheet" href="Style.css" />
+
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="LoginPage.aspx">Login</a></li>
+            <li><a href="Restaurant.aspx">Our Values</a></li>
+            <li><a href="Resveration.aspx">Make a resveration</a></li>
+            <li><a href="Staff.aspx">Staff</a></li>
+        </ul>
+    </nav>
     <h3>Cindric's Taco Palace</h3>
     <form id="form1" runat="server">
        <table>
@@ -20,7 +30,7 @@
                     <asp:Label ID="lblUserName" runat="server" Text="User name:"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtUserID" runat="server" Width="100px"></asp:TextBox>
+                    <asp:TextBox ID="txtUserID" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -41,8 +51,9 @@
 
         <asp:Label ID="lblStatus" runat="server" Text="" EnableViewState="false"></asp:Label>
         <br />
-        <a herf="Default.html">Back to Menu</a>
-
+        
+        <a href="Default.html">Back to main page</a> 
+        
     </form>
 
 </body>
