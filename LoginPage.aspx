@@ -10,13 +10,16 @@
 </head>
 <body>
     <nav>
+        <div class="wrapper">
         <ul>
             <li><a href="LoginPage.aspx">Login</a></li>
             <li><a href="Restaurant.aspx">Our Values</a></li>
             <li><a href="Resveration.aspx">Make a resveration</a></li>
             <li><a href="Staff.aspx">Staff</a></li>
         </ul>
+            </div>
     </nav>
+    <div class="wrapper">
     <h3>Cindric's Taco Palace</h3>
     <form id="form1" runat="server">
        <table>
@@ -52,9 +55,8 @@
         <asp:Label ID="lblStatus" runat="server" Text="" EnableViewState="false"></asp:Label>
         <br />
         
-        <a href="Default.html">Back to main page</a> 
-        
+        <a href="Default.html">Back to main page</a>  
     </form>
-
+    </div>
 </body>
 </html>

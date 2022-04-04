@@ -9,13 +9,16 @@
 </head>
 <body>
     <nav>
+        <div class="wrapper">
         <ul>
             <li><a href="LoginPage.aspx">Login</a></li>
             <li><a href="Restaurant.aspx">Our Values</a></li>
             <li><a href="Resveration.aspx">Make a resveration</a></li>
             <li><a href="Staff.aspx">Staff</a></li>
         </ul>
+            </div>
     </nav>
+    <div class="wrapper">
     <form id="form1" runat="server">
         <div>
             <h2>About our staff and their accomplishments</h2>
@@ -28,5 +31,6 @@
 
         </div>
     </form>
+        </div>
 </body>
 </html>
