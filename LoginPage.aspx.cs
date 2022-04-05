@@ -23,28 +23,28 @@ namespace CSC_410_Team_Project_Restaurant
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUserName.Text.Length > 0 && txtPassword.Text.Length > 0)
-            {
-                dView = (DataView)sdsLogin.Select(DataSourceSelectArguments.Empty);
-                if (dView.Count > 0)
-                {
-                    // successful login
-                    dRowView = dView[0];
-                    userType = (string)dRowView["UserType"];
-                    userName = (string)dRowView["UserName"];
-                    Session["UserType"] = userType;
-                    Session["UserName"] = userName;
-                    Response.Redirect("MainMenu.aspx");
-                }
-                else
-                {
-                    lblStatus.Text = "Invalid User name or password";
-                }
-            }
-            else
-            {
-                lblStatus.Text = "Please enter a User name and a Password";
-            }
+            //if (txtUserName.Text.Length > 0 && txtPassword.Text.Length > 0)
+            //{
+            //    dView = (DataView)sdsLogin.Select(DataSourceSelectArguments.Empty);
+            //    if (dView.Count > 0)
+            //    {
+            //        // successful login
+            //        dRowView = dView[0];
+            //        userType = (string)dRowView["UserType"];
+            //        userName = (string)dRowView["UserName"];
+            //        Session["UserType"] = userType;
+            //        Session["UserName"] = userName;
+            //        Response.Redirect("MainMenu.aspx");
+            //    }
+            //    else
+            //    {
+            //        lblStatus.Text = "Invalid User name or password";
+            //    }
+            //}
+            //else
+            //{
+            //    lblStatus.Text = "Please enter a User name and a Password";
+            //}
         }
     }
 }

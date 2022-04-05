@@ -52,7 +52,7 @@
         </table>
         <br />
 
-        <asp:SqlDataSource ID="sdsLogin" runat="server"
+        <%--<asp:SqlDataSource ID="sdsLogin" runat="server"
             ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>"
             SelectCommand="SELECT * FROM [dbo.Customer] WHERE (([Username] = @Username) AND ([Password] = @Password))">
             <SelectParameters>
@@ -61,7 +61,7 @@
             </SelectParameters>
         </asp:SqlDataSource>
 
-        <asp:Label ID="lblStatus" runat="server" Text="" EnableViewState="false"></asp:Label>
+        <asp:Label ID="lblStatus" runat="server" Text="" EnableViewState="false"></asp:Label>--%>
         <br />
         
         <a href="Default.html">Back to main page</a>  
