@@ -17,6 +17,9 @@
                     </a>
                 </li>
                 <li>
+                    <a href="MenuPage.aspx">Menu</a>
+                </li>
+                <li>
                     <a href="LoginPage.aspx">Login</a>
                 </li>
                 <li>
