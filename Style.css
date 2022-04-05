@@ -8,6 +8,7 @@ body{
 }
 
 .wrapper{
+   
     margin:0 auto;
     width: 1000px;
 }
@@ -61,7 +62,7 @@ ul{
 ul li{
     list-style:none;
     display: inline-block;
-    float: left;
+    float: right;
     line-height: 100px;
 }
 

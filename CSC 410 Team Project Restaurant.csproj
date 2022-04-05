@@ -72,6 +72,7 @@
     <Content Include="Image\kylechef.jpg" />
     <Content Include="Image\Nathon.jpg" />
     <Content Include="Image\Nathon2.JPG" />
+    <None Include="Image\wording on logo.JPG" />
     <Content Include="LoginPage.aspx" />
     <Content Include="Restaurant.aspx" />
     <Content Include="Resveration.aspx" />
