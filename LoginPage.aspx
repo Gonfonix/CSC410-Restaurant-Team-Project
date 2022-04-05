@@ -63,8 +63,9 @@
                 </td>
             </tr>
         </table>
-        
-        <a href="Default.html">Back to main page</a>  
+        <br />
+        <br />
+        <a href="CreateLoginPage.aspx">Create a new login</a>  
     </form>
     </div>
 </body>
