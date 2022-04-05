@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" href="Style.css" />
 </head>
 <body>
     <nav>
@@ -34,11 +35,11 @@
                     </ul>
                 </div>
             </nav>
-
+    <div class="wrapper">
     <h2>The admin can change stuff on this page</h2>
 
     <form id="form1" runat="server">
-        
+    </div>
 
 
     </form>
