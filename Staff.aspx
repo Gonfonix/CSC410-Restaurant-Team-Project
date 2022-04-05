@@ -10,14 +10,23 @@
 <body>
     <nav>
         <div class="wrapper">
-        <ul>
-            </li><image style="height: 100px"; src="Image/wording on logo.jpg"></image><li>
-            <li><a href="LoginPage.aspx">Login</a></li>
-            <li><a href="Restaurant.aspx">Our Values</a></li>
-            <li><a href="Resveration.aspx">Make a resveration</a></li>
-            <li><a href="Staff.aspx">Staff</a></li>
-        </ul>
-            </div>
+            <ul>
+                <li>
+                    <image style="height: 100px"; src="Image/wording on logo.jpg"></image>
+                </li>
+                <li>
+                    <a href="LoginPage.aspx">Login</a>
+                </li>
+                <li>
+                    <a href="Restaurant.aspx">Our Values</a>
+                </li>
+                <li><a href="Resveration.aspx">Make a resveration</a>
+                </li>
+                <li>
+                    <a href="Staff.aspx">Staff</a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <div class="wrapper">
     <form id="form1" runat="server">
