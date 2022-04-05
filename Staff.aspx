@@ -36,7 +36,7 @@
         <div>
             <h1>About our staff and their accomplishments</h1><br />
             <h2>About our Company's employee behavior</h2><br />
-            <h3">At Cindric's Toco palace, we care too much about our customers to
+            <h3">At Cindric's Taco palace, we care too much about our customers to
                 give them anything less than perfect. We have partnered with Tony Soprano, a
                 significant influencer who will oversee our employees' behavior and teach them the trait of respect
                 and giving to our customers. We value employees and customer relationships, and we believe excellent
