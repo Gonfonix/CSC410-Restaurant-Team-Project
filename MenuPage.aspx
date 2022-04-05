@@ -9,37 +9,36 @@
 </head>
 <body>
     <nav>
-                <div class="wrapper">
-                    <ul>
-                        <li>
-                            <a href="LoginPage.aspx">Login</a>
-                        </li>
-                        <li>
-                            <a href="Staff.aspx">Our Team</a>
-                        </li>
-                        <li>
-                            <a href="Restaurant.aspx">Our Values</a>
-                        </li>
-                        <li>
-                            <a href="Resveration.aspx">Make a Resveration</a>
-                        </li>
-                        <li>
-                            <a href="MenuPage.aspx">Menu</a>
-                        </li>
-                        
-                        <div class="logo">
+        <div class="wrapper">
+            <ul>
+                <li>
+                    <a href="LoginPage.aspx">Login</a>
+                </li>
+                <li>
+                     <a href="Staff.aspx">Our Team</a>
+                </li>
+                <li>
+                    <a href="Restaurant.aspx">Our Values</a>
+                 </li>
+                 <li>
+                    <a href="Resveration.aspx">Make a Resveration</a>
+                 </li>
+                 <li>
+                    <a href="MenuPage.aspx">Menu</a>
+                 </li>
+                    <div class="logo">
                             <a href="Default.html">
                             <image style="height: 100px" ; src="Image/wording on logo.jpg"></image>
                         </a>
-                        </div>
-                    </ul>
-                </div>
-            </nav>
-     <div class="wrapper">
-    <h2>Cindric's Taco Palace - Menu</h2>
-     <div class="wrapper">
+                    </div>
+               </ul>
+          </div>
+      </nav>
+    <div class="wrapper">
+        <h2>Cindric's Taco Palace - Menu</h2>
+     <div class="grid">
     <form id="form1" runat="server">
-        
+    <div class="grid"></div>
         <asp:GridView ID="gvMenu" runat="server" DataSourceID="sdsMenu" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="ItemName" HeaderText="ItemName" SortExpression="ItemName" />
@@ -48,7 +47,7 @@
         </asp:GridView>
 
         <asp:SqlDataSource ID="sdsMenu" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" SelectCommand="SELECT [ItemName], [ItemDescription] FROM [MenuItem] ORDER BY [ItemName]"></asp:SqlDataSource>
-
+        </div>
     </form>
          </div>
 </body>

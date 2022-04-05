@@ -86,3 +86,26 @@ logo{
     left:80px;
     top:20px;
 }
+
+grid{
+    display: grid;
+    grid-template-columns:50%;
+}
+
+
+    .grid td {
+        padding: 10px;
+        border: 1px solid #c1c1c1;
+        color: #444;
+        font-size: 1em;
+    }
+
+    .grid th {
+        padding: 4px 2px;
+        color: #707083;
+        text-shadow: 1px 1px 0px #ffffff;
+        
+        border: 1px solid #c1c1c1;
+        font-size: 1em;
+        text-align: center;
+    }
