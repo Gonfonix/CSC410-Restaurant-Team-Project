@@ -34,19 +34,22 @@
                </ul>
           </div>
       </nav>
+    <br /><br />
     <div class="wrapper">
         <h2>Cindric's Taco Palace - Menu</h2>
      <div class="grid">
+    <br /><br />
     <form id="form1" runat="server">
     <div class="grid"></div>
         <asp:GridView ID="gvMenu" runat="server" DataSourceID="sdsMenu" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="ItemName" HeaderText="ItemName" SortExpression="ItemName" />
                 <asp:BoundField DataField="ItemDescription" HeaderText="ItemDescription" SortExpression="ItemDescription" />
+                <asp:BoundField DataField="ItemPrice" HeaderText="ItemPrice" SortExpression="ItemPrice"></asp:BoundField>
             </Columns>
         </asp:GridView>
 
-        <asp:SqlDataSource ID="sdsMenu" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" SelectCommand="SELECT [ItemName], [ItemDescription] FROM [MenuItem] ORDER BY [ItemName]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="sdsMenu" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" SelectCommand="SELECT [ItemName], [ItemDescription], [ItemPrice] FROM [MenuItem] ORDER BY [ItemName], [ItemPrice]"></asp:SqlDataSource>
         </div>
     </form>
          </div>
