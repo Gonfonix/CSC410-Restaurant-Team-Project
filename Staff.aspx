@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link rel="stylesheet" href="Style.css" />
+    <br />
     <title>About our staff and their accomplishments</title>
 </head>
 <body>
@@ -38,13 +39,14 @@
     <div class="wrapper">
     <form id="form1" runat="server">
         <div>
-            <h1>About our staff and their accomplishments</h1><br />
-            <h2>About our Company's employee behavior</h2><br />
-            <h3">At Cindric's Taco palace, we care too much about our customers to
-                give them anything less than perfect. We have partnered with Tony Soprano, a
-                significant influencer who will oversee our employees' behavior and teach them the trait of respect
-                and giving to our customers. We value employees and customer relationships, and we believe excellent
-                customer service goes beyond inside the walls of Cindric Taco palace. </h3><br /><br />
+            <br />
+            <h1>About Our Staff and the Company:</h1>
+            <br />
+            <h3">At Cindric's Taco Palace, we care a lot about our customers. We strive to
+                give them nothing less than perfect. We have partnered with Tony Soprano, a
+                significant influencer who will oversee our employees' behavior and teach them the traits of respect
+                and giving. We value our employee to customer relationships. Finally, we believe excellent
+                customer service goes beyond inside the walls of Cindric Taco Palace, and extends into your home. </h3><br /><br />
             <div class="quotes">
             <table>
                 <tr>
@@ -62,7 +64,7 @@
                         <image class="StaffImgKS" src="Image/kylechef.jpg"></image>
                     </td>
                     <td>
-                        <h2 style="margin-left: 20px"><q>I want to be... where the tacos are</q></h2>
+                        <h2 style="margin-left: 20px"><q>I want to be... where the tacos are.</q></h2>
                     </td>
                 </tr>
                 <tr>
