@@ -52,7 +52,7 @@
                         <image class="StaffImgAJ" src="Image/ChefAJ.jpg"></image>
                     </td>
                     <td>
-                        <h3 style="margin-left:20px;"><u> AJ Hammond: Chef de cuisine</u></h3>
+                        <h3 style="margin-left:20px;"><u> AJ Hammond: Chef de cuisine</u></h3><br />
                         <h2 style="margin-left: 20px;" ><q>I spent my whole life studying and preparing myself to be an ethical
                             hacker. But then I took a bite of the scrumptious netbeans taco. And from
                             that moment on, I knew I wanted to work at Cindric’s Taco Palace.</q> </h2>
@@ -63,7 +63,7 @@
                         <image class="StaffImgKS" src="Image/kylechef.jpg"></image>
                     </td>
                     <td>
-                        <h3 style="margin-left:20px;"><u> Kyle Spencer: Sous Chef </u></h3>
+                        <h3 style="margin-left:20px;"><u> Kyle Spencer: Sous Chef </u></h3><br />
                         <h2 style="margin-left: 20px"><q>I want to be... where the tacos are</q></h2>
                     </td>
                 </tr>
@@ -72,7 +72,7 @@
                         <image class="StaffImgN" </image>
                     </td>
                     <td>
-                        <h3 style="margin-left:20px;"><u> Nathon Williams: Assistant to the sous chef Sous Chef </u></h3>
+                        <h3 style="margin-left:20px;"><u> Nathon Williams: Assistant to the sous chef Sous Chef </u></h3><br />
                         <h2 style="margin-left:20px";>After consuming many tacos, I have inherited the ability to grow a mustache fast.
                             Take your cursor over my picture for an example!</h2>
                     </td>
