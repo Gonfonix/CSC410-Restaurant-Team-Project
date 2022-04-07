@@ -38,11 +38,12 @@
     <div class="wrapper">
     <form id="form1" runat="server">
         <div>
-
+            <br />
             <h2>Mission Statment: </h2>
+            <br />
             <table>
                 <tr>
-                    <td><h4>At Cindric’s Taco palace our mission is to provide only the freshest ingredients, brining joy and laughter, while providing educational entertainment. </h4></td>
+                    <td><h4>At Cindric’s Taco palace our mission is to provide the freshest ingredients, bring joy and laughter to our customers, while also providing educational entertainment. </h4></td>
                 </tr>
                 <tr>
                     <td><h5>somthing can go here</h5></td>

@@ -34,19 +34,24 @@
                </ul>
           </div>
       </nav>
+    <br /><br />
     <div class="wrapper">
         <h2>Cindric's Taco Palace - Menu</h2>
      <div class="grid">
+    <br /><br />
     <form id="form1" runat="server">
     <div class="grid"></div>
-        <asp:GridView ID="gvMenu" runat="server" DataSourceID="sdsMenu" AutoGenerateColumns="False">
+        <asp:GridView ID="gvMenu" runat="server" DataSourceID="sdsMenu" AutoGenerateColumns="False" AllowSorting="True" BackColor="#FFCC99" BorderColor="Black" BorderWidth="1px" ForeColor="Black">
             <Columns>
-                <asp:BoundField DataField="ItemName" HeaderText="ItemName" SortExpression="ItemName" />
-                <asp:BoundField DataField="ItemDescription" HeaderText="ItemDescription" SortExpression="ItemDescription" />
+                <asp:BoundField DataField="ItemName" HeaderText="Name" SortExpression="ItemName" />
+                <asp:BoundField DataField="ItemDescription" HeaderText="Description" SortExpression="ItemDescription" />
+                <asp:BoundField DataField="ItemPrice" HeaderText="Price" SortExpression="ItemPrice" DataFormatString="{0:c}"></asp:BoundField>
             </Columns>
+            <HeaderStyle BackColor="#FF9933" Font-Bold="False" ForeColor="Black" HorizontalAlign="Center" />
+            <RowStyle HorizontalAlign="Center" />
         </asp:GridView>
 
-        <asp:SqlDataSource ID="sdsMenu" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" SelectCommand="SELECT [ItemName], [ItemDescription] FROM [MenuItem] ORDER BY [ItemName]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="sdsMenu" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" SelectCommand="SELECT [ItemName], [ItemDescription], [ItemPrice] FROM [MenuItem] ORDER BY [ItemName], [ItemPrice]"></asp:SqlDataSource>
         </div>
     </form>
          </div>
