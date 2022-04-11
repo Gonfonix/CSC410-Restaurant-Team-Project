@@ -35,11 +35,32 @@
                     </ul>
                 </div>
             </nav>
-    <h2>You will be able to create a login on this page</h2>
 
     <form id="form1" runat="server">
         
+        <br />
+        <h2>Please create a login:</h2>
+        <br />
+        <table>
+            <tr>
+                <td>
+                    <asp:Label ID="lblUsername" runat="server" Text="Username: "></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblPassword" runat="server" Text="Password: "></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+        </table>
 
+        <asp:Label ID="lblStatus" runat="server" EnableViewState="False" ForeColor="Red" Font-Bold="True"></asp:Label>
 
     </form>
 </body>
