@@ -43,7 +43,7 @@ namespace CSC_410_Team_Project_Restaurant
 				cmd = new SqlCommand();
 				cmd.Connection = conn;
 				cmd.CommandType = CommandType.Text;
-				cmd.CommandText = "INSERT INTO Major (MajorCode, MajorDescription) VALUES ('"
+				cmd.CommandText = "INSERT INTO Customer (CustomerID, Username, Password, FirstName, LastName) VALUES ('"
 					+ email + "','" + username + "','" + password + "','" + FirstName + "','" + LastName + "')";
 				conn.Open();
 
