@@ -102,14 +102,12 @@
                     
                 </td>
                 <td>
-                    <%--<asp:Button ID="btnAddUser" runat="server" Text="Create User" OnClick="btnAddUser_Click" />--%>
+                    <asp:Button ID="btnAddUser" runat="server" Text="Create User" OnClick="btnAddUser_Click" />
                 </td>
             </tr>
         </table>
-
+        <br />
         <asp:Label ID="lblStatus" runat="server" EnableViewState="False" ForeColor="Red" Font-Bold="True"></asp:Label>
-
-        <asp:SqlDataSource ID="sdsLogin" runat="server"></asp:SqlDataSource>
 
     </form>
 </body>
