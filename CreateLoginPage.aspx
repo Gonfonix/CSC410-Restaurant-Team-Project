@@ -44,23 +44,72 @@
         <table>
             <tr>
                 <td>
-                    <asp:Label ID="lblUsername" runat="server" Text="Username: "></asp:Label>
+                    <asp:Label ID="lblFirstName" runat="server" Text="First Name: "></asp:Label>&nbsp
                 </td>
                 <td>
-                    <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtFirstName" runat="server" Width="200px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lblPassword" runat="server" Text="Password: "></asp:Label>
+                    <asp:Label ID="lblLastName" runat="server" Text="Last Name: "></asp:Label>&nbsp
                 </td>
                 <td>
-                    <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtLastName" runat="server" Width="200px"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblUsername" runat="server" Text="Username: "></asp:Label>&nbsp
+                </td>
+                <td>
+                    <asp:TextBox ID="txtUsername" runat="server" Width="200px"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblPassword" runat="server" Text="Password: "></asp:Label>&nbsp
+                </td>
+                <td>
+                    <asp:TextBox ID="txtPassword" runat="server" Width="250px"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblEmail" runat="server" Text="Email: "></asp:Label>&nbsp
+                </td>
+                <td>
+                    <asp:TextBox ID="txtEmail" runat="server" Width="250px"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    
+                </td>
+                <td>
+                    <%--<asp:Button ID="btnAddUser" runat="server" Text="Create User" OnClick="btnAddUser_Click" />--%>
                 </td>
             </tr>
         </table>
 
         <asp:Label ID="lblStatus" runat="server" EnableViewState="False" ForeColor="Red" Font-Bold="True"></asp:Label>
+
+        <asp:SqlDataSource ID="sdsLogin" runat="server"></asp:SqlDataSource>
 
     </form>
 </body>
