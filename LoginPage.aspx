@@ -37,14 +37,11 @@
                 </div>
             </nav>
     <div class="wrapper">
-    <h3>Cindric's Taco Palace</h3>
+    <br />
+    <h2>Cindric's Taco Palace - Login</h2>
+    <br />
     <form id="form1" runat="server">
        <table>
-            <tr>
-                <td colspan="2">
-                    Please login for the Main Menu
-                </td>
-            </tr>
             <tr>
                 <td>
                     <asp:Label ID="lblUserName" runat="server" Text="User name:"></asp:Label>
@@ -67,7 +64,6 @@
                 </td>
             </tr>
         </table>
-        <br />
         <br />
         <a href="CreateLoginPage.aspx">Create a new login</a>  
     </form>

@@ -108,7 +108,7 @@
         </table>
         <br />
         <asp:Label ID="lblStatus" runat="server" EnableViewState="False" ForeColor="Red" Font-Bold="True"></asp:Label>
-
+        <a href="LoginPage.aspx">After Creating an Account Click Back Here</a>
     </form>
 </body>
 </html>
