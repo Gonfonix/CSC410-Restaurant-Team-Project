@@ -65,7 +65,10 @@
             </tr>
         </table>
         <br />
-        <a href="CreateLoginPage.aspx">Create a new login</a>  
+        <a href="CreateLoginPage.aspx">Create a new login</a>
+        <br />
+        <asp:Label ID="lblStatus" runat="server" EnableViewState="False" Font-Bold="True" ForeColor="Red"></asp:Label>
+
     </form>
     </div>
 </body>
