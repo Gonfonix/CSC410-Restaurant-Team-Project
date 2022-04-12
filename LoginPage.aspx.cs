@@ -25,6 +25,8 @@ namespace CSC_410_Team_Project_Restaurant
         {
             if (txtUserName.Text.Length > 0 && txtPassword.Text.Length > 0)
             {
+                sdsLogin.SelectCommand = "SELECT UserName FROM Customer WHERE UserName = '" + txtUserName.Text + "' UNION SELECT UserName FROM Employee WHERE UserName = '" + txtUserName.Text + "'";
+                //sdsLogin.DataBind();
                 dView = (DataView)sdsLogin.Select(DataSourceSelectArguments.Empty);
                 if (dView.Count > 0)
                 {
@@ -35,15 +37,21 @@ namespace CSC_410_Team_Project_Restaurant
                 
                     Session["UserName"] = userName;
 
+                    Response.Write(Session["UserName"]);
+
                     //if cookie = admin, go admin page, if not, go regular page
+<<<<<<< Updated upstream
                     if(userName == "cindricbb")
+=======
+                    if((string)Session["UserName"] == "Administrator" || (string)Session["UserName"] == "cindricbb")
+>>>>>>> Stashed changes
                     {
                         Response.Redirect("AdminPage.aspx");
 
                     }
                     else
                     {
-                        Response.Redirect("MenuPage.aspx");
+                        //Response.Redirect("MenuPage.aspx");
                     }
                 }
                 else

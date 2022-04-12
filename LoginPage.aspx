@@ -41,7 +41,7 @@
     <h2>Cindric's Taco Palace - Login</h2>
     <br />
     <form id="form1" runat="server">
-        <asp:SqlDataSource ID="sdsLogin" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" SelectCommand="SELECT * FROM [Customer]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="sdsLogin" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" SelectCommand="SELECT * FROM [Customer], [Employee]"></asp:SqlDataSource>
         <table>
             <tr>
                 <td>
