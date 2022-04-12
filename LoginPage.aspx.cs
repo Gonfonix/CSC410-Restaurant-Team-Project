@@ -25,40 +25,57 @@ namespace CSC_410_Team_Project_Restaurant
         {
             if (txtUserName.Text.Length > 0 && txtPassword.Text.Length > 0)
             {
-                sdsLogin.SelectCommand = "SELECT UserName FROM Customer WHERE UserName = '" + txtUserName.Text + "' UNION SELECT UserName FROM Employee WHERE UserName = '" + txtUserName.Text + "'";
+                sdsLogin.SelectCommand = "SELECT CustomerID, UserName, Password FROM Customer WHERE UserName = '" + txtUserName.Text + "' AND Password = '" + txtPassword.Text + "' UNION SELECT CAST(EmployeeID AS varchar), UserName, Password FROM Employee WHERE UserName = '" + txtUserName.Text + "' AND Password = '" + txtPassword.Text + "'";
                 //sdsLogin.DataBind();
                 dView = (DataView)sdsLogin.Select(DataSourceSelectArguments.Empty);
                 if (dView.Count > 0)
                 {
-                    // successful login
                     dRowView = dView[0];
-               
+
                     userName = (string)dRowView["UserName"];
-                
+
+                    password = (string)dRowView["Password"];
+
+                    /* 
+                     * If "CustomerID" is an int, then it's a Employee. If it is an email (varchar/string), then it is a Customer.
+                     * 
+                     * This if statement is written this way because the select statement above will associate CustomerID with both tables
+                     * instead of EmployeeID for the Employee table only... this is because the column names are different in both tables
+                     * when doing a merge of the tables.
+                    */
+                    if (int.TryParse((string)dRowView["CustomerID"], out int value))
+                    {
+                        userType = "Employee";
+                    } else
+                    {
+                        userType = "Customer";
+                    }
+
                     Session["UserName"] = userName;
 
-                    Response.Write(Session["UserName"]);
+                    Session["Password"] = password;
 
-                    //if cookie = admin, go admin page, if not, go regular page
+                    //if userType = Employee, go to admin page. Else, go to regular page.
 
-                    if((string)Session["UserName"] == "Administrator" || (string)Session["UserName"] == "cindricbb")
+                    if (userType == "Employee")
                     {
                         Response.Redirect("AdminPage.aspx");
 
                     }
-                    else
+                    else if (userType == "Customer")
                     {
                         //Response.Redirect("MenuPage.aspx");
+                        Response.Write(Session["UserName"]);
                     }
                 }
                 else
                 {
-                    lblStatus.Text = "Invalid User name or password";
+                    lblStatus.Text = "Invalid Username or Password";
                 }
             }
             else
             {
-                lblStatus.Text = "Please enter a User name and a Password";
+                lblStatus.Text = "Please enter both a Username and a Password";
             }
         }
     }
