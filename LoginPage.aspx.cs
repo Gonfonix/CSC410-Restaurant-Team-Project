@@ -40,11 +40,10 @@ namespace CSC_410_Team_Project_Restaurant
                     Response.Write(Session["UserName"]);
 
                     //if cookie = admin, go admin page, if not, go regular page
-<<<<<<< Updated upstream
+
                     if(userName == "cindricbb")
-=======
+
                     if((string)Session["UserName"] == "Administrator" || (string)Session["UserName"] == "cindricbb")
->>>>>>> Stashed changes
                     {
                         Response.Redirect("AdminPage.aspx");
 
