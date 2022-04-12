@@ -10,26 +10,26 @@
 </head>
 <body>
     <nav>
-                <div class="wrapper">
-                    <ul>
-                        <li>
-                            <a href="LoginPage.aspx">Login</a>
-                        </li>
-                        <li>
-                            <a href="Staff.aspx">Our Team</a>
-                        </li>
-                        <li>
-                            <a href="Restaurant.aspx">Our Values</a>
-                        </li>
-                        <li>
-                            <a href="Resveration.aspx">Make a Resveration</a>
-                        </li>
-                        <li>
-                            <a href="MenuPage.aspx">Menu</a>
-                        </li>
-                        
-                        <div class="logo">
-                            <a href="Default.html">
+        <div class="wrapper">
+            <ul>
+                <li>
+                    <a href="LoginPage.aspx">Login</a>
+                </li>
+                <li>
+                    <a href="Staff.aspx">Our Team</a>
+                </li>
+                <li>
+                    <a href="Restaurant.aspx">Our Values</a>
+                </li>
+                <li>
+                    <a href="Resveration.aspx">Make a Resveration</a>
+                </li>
+                <li>
+                    <a href="MenuPage.aspx">Menu</a>
+                </li>
+
+                <div class="logo">
+                    <a href="Default.html">
                             <image style="height: 100px" ; src="Image/wording on logo.jpg"></image>
                         </a>
                         </div>
@@ -41,7 +41,8 @@
     <h2>Cindric's Taco Palace - Login</h2>
     <br />
     <form id="form1" runat="server">
-       <table>
+        <asp:SqlDataSource ID="sdsLogin" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" SelectCommand="SELECT * FROM [Customer]"></asp:SqlDataSource>
+        <table>
             <tr>
                 <td>
                     <asp:Label ID="lblUserName" runat="server" Text="User name:"></asp:Label>
