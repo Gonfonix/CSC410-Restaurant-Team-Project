@@ -97,10 +97,6 @@ ul li a {
         color: #303fe1 !important;
     }
 
-ul li a:hover{
-    color: red;
-}
-
 logo{
     left:80px;
     top:20px;
