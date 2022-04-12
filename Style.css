@@ -18,7 +18,19 @@ body{
     color:coral;
 }
 
+.welcome-txt {
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    margin: 17%, 29%;
+    text-align: center;
+}
 
+.welcome-txt h1{
+    text-align: center;
+    color: black;
+    font-size: 60px;
+}
 
 .StaffImgAJ {
     width: 300px;
