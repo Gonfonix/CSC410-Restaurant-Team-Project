@@ -28,7 +28,7 @@ nav {
     position: absolute;
     text-align: center;
     width: 100%;
-    min-height: 250px;
+    min-height: 400px;
     color: white;
 }
 
@@ -39,12 +39,12 @@ nav {
     font-size: 14px;
     margin-top: 20px;
     display: block;
-    color: rgb(255, 255, 255);
+    color: white;
 }
 
     .welcome-txt a:hover {
-        background: rgb(255, 255, 255);
-        color: rgb(0, 0, 0);
+        background: white;
+        color: black;
     }
 
 .quotes{
