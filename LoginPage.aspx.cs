@@ -30,9 +30,9 @@ namespace CSC_410_Team_Project_Restaurant
                 {
                     // successful login
                     dRowView = dView[0];
-                    userType = (string)dRowView["UserType"];
+               
                     userName = (string)dRowView["UserName"];
-                    Session["UserType"] = userType;
+                
                     Session["UserName"] = userName;
 
                     //if cookie = admin, go admin page, if not, go regular page
