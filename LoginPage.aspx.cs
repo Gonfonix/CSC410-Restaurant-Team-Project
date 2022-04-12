@@ -25,7 +25,7 @@ namespace CSC_410_Team_Project_Restaurant
         {
             if (txtUserName.Text.Length > 0 && txtPassword.Text.Length > 0)
             {
-                sdsLogin.SelectCommand = "SELECT CustomerID, UserName, Password FROM Customer WHERE UserName = '" + txtUserName.Text + "' AND Password = '" + txtPassword.Text + "' UNION SELECT CAST(EmployeeID AS varchar), UserName, Password FROM Employee WHERE UserName = '" + txtUserName.Text + "' AND Password = '" + txtPassword.Text + "'";
+                sdsLogin.SelectCommand = "SELECT CustomerID, UserName, Password FROM Customer WHERE UserName = '" + txtUserName.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS AND Password = '" + txtPassword.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS UNION SELECT CAST(EmployeeID AS varchar), UserName, Password FROM Employee WHERE UserName = '" + txtUserName.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS AND Password = '" + txtPassword.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS";
                 //sdsLogin.DataBind();
                 dView = (DataView)sdsLogin.Select(DataSourceSelectArguments.Empty);
                 if (dView.Count > 0)
@@ -64,8 +64,7 @@ namespace CSC_410_Team_Project_Restaurant
                     }
                     else if (userType == "Customer")
                     {
-                        //Response.Redirect("MenuPage.aspx");
-                        Response.Write(Session["UserName"]);
+                        Response.Redirect("MenuPage.aspx");
                     }
                 }
                 else
