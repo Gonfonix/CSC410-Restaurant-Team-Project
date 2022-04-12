@@ -41,8 +41,6 @@ namespace CSC_410_Team_Project_Restaurant
 
                     //if cookie = admin, go admin page, if not, go regular page
 
-                    if(userName == "cindricbb")
-
                     if((string)Session["UserName"] == "Administrator" || (string)Session["UserName"] == "cindricbb")
                     {
                         Response.Redirect("AdminPage.aspx");
