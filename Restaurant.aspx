@@ -5,52 +5,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>About Cindri's Taco Palace</title>
-     <link rel="stylesheet" href="Style.css" />
+    <link rel="stylesheet" href="Style.css" />
 </head>
 <body>
-   <nav>
-                <div class="wrapper">
-                    <ul>
-                        <li>
-                            <a href="LoginPage.aspx">Login</a>
-                        </li>
-                        <li>
-                            <a href="Staff.aspx">Our Team</a>
-                        </li>
-                        <li>
-                            <a href="Restaurant.aspx">Our Values</a>
-                        </li>
-                        <li>
-                            <a href="Resveration.aspx">Make a Resveration</a>
-                        </li>
-                        <li>
-                            <a href="MenuPage.aspx">Menu</a>
-                        </li>
-                        
-                        <div class="logo">
-                            <a href="Default.html">
-                            <image style="height: 100px" ; src="Image/wording on logo.jpg"></image>
-                        </a>
-                        </div>
-                    </ul>
+    <nav>
+        <div class="wrapper">
+            <ul>
+                <li>
+                    <a href="LoginPage.aspx">Login</a>
+                </li>
+                <li>
+                    <a href="Staff.aspx">Our Team</a>
+                </li>
+                <li>
+                    <a href="Restaurant.aspx">Our Values</a>
+                </li>
+                <li>
+                    <a href="Resveration.aspx">Make a Resveration</a>
+                </li>
+                <li>
+                    <a href="MenuPage.aspx">Menu</a>
+                </li>
+
+                <div class="logo">
+                    <a href="Default.html">
+                        <image style="height: 100px" ; src="Image/wording on logo.jpg"></image>
+                    </a>
                 </div>
-            </nav>
+            </ul>
+        </div>
+    </nav>
     <div class="welcome-txt">
-    <form id="form1" runat="server">
-        <div>
-            <br />
-            <h2>Mission Statment: </h2>
-            <br />
-            <table>
-                <tr>
-                    <td><h4>At Cindric’s Taco palace our mission is to provide the freshest ingredients, bring joy and laughter to our customers, while also providing educational entertainment. </h4></td>
-                </tr>
-                <tr>
-                    <td><h5>somthing can go here</h5></td>
-                </tr>
-            </table>
-        </div>
-    </form>
-        </div>
+        <form id="form1" runat="server">
+            <div>
+                <br />
+                <h2>Mission Statment: </h2>
+                <br />
+                <table>
+                    <tr>
+                        <td>
+                            <h4>At Cindric’s Taco palace our mission is to provide the freshest ingredients, bring joy and laughter to our customers, while also providing educational entertainment. </h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5>somthing can go here</h5>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

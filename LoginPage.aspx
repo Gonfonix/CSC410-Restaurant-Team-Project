@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Login Page</title>
-     <link rel="stylesheet" href="Style.css" />
+    <link rel="stylesheet" href="Style.css" />
 
 </head>
 <body>
@@ -30,47 +30,47 @@
 
                 <div class="logo">
                     <a href="Default.html">
-                            <image style="height: 100px" ; src="Image/wording on logo.jpg"></image>
-                        </a>
-                        </div>
-                    </ul>
+                        <image style="height: 100px" ; src="Image/wording on logo.jpg"></image>
+                    </a>
                 </div>
-            </nav>
+            </ul>
+        </div>
+    </nav>
     <div class="welcome-txt">
-    <br />
-    <h2>Cindric's Taco Palace - Login</h2>
-    <br />
-    <form id="form1" runat="server">
-        <asp:SqlDataSource ID="sdsLogin" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" SelectCommand="SELECT * FROM [Customer], [Employee]"></asp:SqlDataSource>
-        <table>
-            <tr>
-                <td>
-                    <asp:Label ID="lblUserName" runat="server" Text="User name:"></asp:Label>
-                </td>
-                <td>
-                    <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
-                </td>
-                <td>
-                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="150px"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
-                </td>
-            </tr>
-        </table>
         <br />
-        <a href="CreateLoginPage.aspx">Create a new login</a>
+        <h2>Cindric's Taco Palace - Login</h2>
         <br />
-        <asp:Label ID="lblStatus" runat="server" EnableViewState="False" Font-Bold="True" ForeColor="Red"></asp:Label>
+        <form id="form1" runat="server">
+            <asp:SqlDataSource ID="sdsLogin" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" SelectCommand="SELECT * FROM [Customer], [Employee]"></asp:SqlDataSource>
+            <table>
+                <tr>
+                    <td>
+                        <asp:Label ID="lblUserName" runat="server" Text="User name:"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="150px"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <a href="CreateLoginPage.aspx">Create a new login</a>
+            <br />
+            <asp:Label ID="lblStatus" runat="server" EnableViewState="False" Font-Bold="True" ForeColor="Red"></asp:Label>
 
-    </form>
+        </form>
     </div>
 </body>
 </html>

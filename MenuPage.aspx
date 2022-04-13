@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-     <link rel="stylesheet" href="Style.css" />
+    <link rel="stylesheet" href="Style.css" />
     <title>Menu Page</title>
 </head>
 <body>
@@ -15,47 +15,49 @@
                     <a href="LoginPage.aspx">Login</a>
                 </li>
                 <li>
-                     <a href="Staff.aspx">Our Team</a>
+                    <a href="Staff.aspx">Our Team</a>
                 </li>
                 <li>
                     <a href="Restaurant.aspx">Our Values</a>
-                 </li>
-                 <li>
+                </li>
+                <li>
                     <a href="Resveration.aspx">Make a Resveration</a>
-                 </li>
-                 <li>
+                </li>
+                <li>
                     <a href="MenuPage.aspx">Menu</a>
-                 </li>
-                    <div class="logo">
-                            <a href="Default.html">
-                            <image style="height: 100px" ; src="Image/wording on logo.jpg"></image>
-                        </a>
-                    </div>
-               </ul>
-          </div>
-      </nav>
-    <br /><br />
+                </li>
+                <div class="logo">
+                    <a href="Default.html">
+                         <image style="height: 100px" ; src="Image/wording on logo.jpg"></image>
+                    </a>
+                </div>
+            </ul>
+        </div>
+    </nav>
+    <br />
+    <br />
 
 
     <div class="welcome-txt">
         <h2>Cindric's Taco Palace - Menu</h2>
-     <div class="grid">
-    <br /><br />
-    <form id="form1" runat="server">
-    <div class="grid"></div>
-        <asp:GridView ID="gvMenu" runat="server" DataSourceID="sdsMenu" AutoGenerateColumns="False" AllowSorting="True" BackColor="#FFCC99" BorderColor="Black" BorderWidth="1px" ForeColor="Black">
-            <Columns>
-                <asp:BoundField DataField="ItemName" HeaderText="Name" SortExpression="ItemName" />
-                <asp:BoundField DataField="ItemDescription" HeaderText="Description" SortExpression="ItemDescription" />
-                <asp:BoundField DataField="ItemPrice" HeaderText="Price" SortExpression="ItemPrice" DataFormatString="{0:c}"></asp:BoundField>
-            </Columns>
-            <HeaderStyle BackColor="#FF9933" Font-Bold="False" ForeColor="Black" HorizontalAlign="Center" />
-            <RowStyle HorizontalAlign="Center" />
-        </asp:GridView>
+        <div class="grid">
+            <br />
+            <br />
+            <form id="form1" runat="server">
+                <div class="grid"></div>
+                <asp:GridView ID="gvMenu" runat="server" DataSourceID="sdsMenu" AutoGenerateColumns="False" AllowSorting="True" BackColor="#FFCC99" BorderColor="Black" BorderWidth="1px" ForeColor="Black">
+                    <Columns>
+                        <asp:BoundField DataField="ItemName" HeaderText="Name" SortExpression="ItemName" />
+                        <asp:BoundField DataField="ItemDescription" HeaderText="Description" SortExpression="ItemDescription" />
+                        <asp:BoundField DataField="ItemPrice" HeaderText="Price" SortExpression="ItemPrice" DataFormatString="{0:c}"></asp:BoundField>
+                    </Columns>
+                    <HeaderStyle BackColor="#FF9933" Font-Bold="False" ForeColor="Black" HorizontalAlign="Center" />
+                    <RowStyle HorizontalAlign="Center" />
+                </asp:GridView>
 
-        <asp:SqlDataSource ID="sdsMenu" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" SelectCommand="SELECT [ItemName], [ItemDescription], [ItemPrice] FROM [MenuItem] ORDER BY [ItemName], [ItemPrice]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="sdsMenu" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" SelectCommand="SELECT [ItemName], [ItemDescription], [ItemPrice] FROM [MenuItem] ORDER BY [ItemName], [ItemPrice]"></asp:SqlDataSource>
         </div>
-    </form>
-         </div>
+        </form>
+    </div>
 </body>
 </html>

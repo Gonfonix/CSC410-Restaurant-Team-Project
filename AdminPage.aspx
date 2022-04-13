@@ -28,17 +28,17 @@
                 </li>
                 <div class="logo">
                     <a href="Default.html">
-                        <image style="height: 100px" ; src="Image/wording on logo.jpg"></image>
+                         <image style="height: 100px" ; src="Image/wording on logo.jpg"></image>
                     </a>
-               </div>
-          </ul>
-       </div>
-   </nav>
+                </div>
+            </ul>
+        </div>
+    </nav>
 
 
     <div class="wrapper">
-    <h2>The admin can change stuff on this page</h2>
-    <form id="form1" runat="server"></form>
+        <h2>The admin can change stuff on this page</h2>
+        <form id="form1" runat="server"></form>
     </div>
 </body>
 </html>

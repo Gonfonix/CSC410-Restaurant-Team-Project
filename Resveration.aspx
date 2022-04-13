@@ -8,39 +8,39 @@
     <link rel="stylesheet" href="Style.css" />
 </head>
 <body>
-   <nav>
-                <div class="wrapper">
-                    <ul>
-                        <li>
-                            <a href="LoginPage.aspx">Login</a>
-                        </li>
-                        <li>
-                            <a href="Staff.aspx">Our Team</a>
-                        </li>
-                        <li>
-                            <a href="Restaurant.aspx">Our Values</a>
-                        </li>
-                        <li>
-                            <a href="Resveration.aspx">Make a Resveration</a>
-                        </li>
-                        <li>
-                            <a href="MenuPage.aspx">Menu</a>
-                        </li>
-                        
-                        <div class="logo">
-                            <a href="Default.html">
-                            <image style="height: 100px" ; src="Image/wording on logo.jpg"></image>
-                        </a>
-                        </div>
-                    </ul>
+    <nav>
+        <div class="wrapper">
+            <ul>
+                <li>
+                    <a href="LoginPage.aspx">Login</a>
+                </li>
+                <li>
+                    <a href="Staff.aspx">Our Team</a>
+                </li>
+                <li>
+                    <a href="Restaurant.aspx">Our Values</a>
+                </li>
+                <li>
+                    <a href="Resveration.aspx">Make a Resveration</a>
+                </li>
+                <li>
+                    <a href="MenuPage.aspx">Menu</a>
+                </li>
+
+                <div class="logo">
+                    <a href="Default.html">
+                        <image style="height: 100px" ; src="Image/wording on logo.jpg"></image>
+                    </a>
                 </div>
-            </nav>
+            </ul>
+        </div>
+    </nav>
     <div class="welcome-txt">
-    <form id="form1" runat="server">
-        <div>
-            <h2>This page will have an interactive GUI for tables, and it will somehow be connected to a calendar</h2>
-        </div>
-    </form>
-        </div>
+        <form id="form1" runat="server">
+            <div>
+                <h2>This page will have an interactive GUI for tables, and it will somehow be connected to a calendar</h2>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
