@@ -37,8 +37,10 @@
 
 
     <div class="wrapper">
-        <h2>The admin can change stuff on this page</h2>
-        <form id="form1" runat="server"></form>
+        <div class="quotes">
+            <h2>The admin can change stuff on this page</h2>
+            <form id="form1" runat="server"></form>
+        </div>
     </div>
 </body>
 </html>

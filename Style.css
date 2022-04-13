@@ -5,14 +5,14 @@
 
 
 body {
-    background-color: #393D47;
+    background-color: #f4c95D;
     height: auto;
 }
 
 nav {
     width: auto;
     height: auto;
-    background-color: #292C33;
+    background-color: #854D27;
 }
 
 .wrapper {
@@ -23,10 +23,7 @@ nav {
     padding-right: 16px;
 }
 
-.wrapperUnderHeader {
-    margin: 0, auto;
-    width: 1000px;
-}
+
 
 .welcome-txt {
     display: flex;
@@ -57,7 +54,7 @@ nav {
 
 .quotes {
     font-family: 'Comic Sans MS';
-    color: coral;
+    color: #DD7230;
 }
 
 .StaffImgAJ {

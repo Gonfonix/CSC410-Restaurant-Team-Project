@@ -36,8 +36,8 @@
             </ul>
         </div>
     </nav>
-    <div class="welcome-txt">
-        <br />
+    <div class="wrapper">
+        <div class="quotes">
         <h2>Cindric's Taco Palace - Login</h2>
         <br />
         <form id="form1" runat="server">
@@ -72,5 +72,7 @@
 
         </form>
     </div>
+    </div>
+
 </body>
 </html>

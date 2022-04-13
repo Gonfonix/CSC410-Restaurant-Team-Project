@@ -35,7 +35,9 @@
             </ul>
         </div>
     </nav>
-    <div class="welcome-txt">
+
+    <div class="wrapper">
+    <div class="quotes">
         <form id="form1" runat="server">
             <div>
                 <br />
@@ -55,6 +57,7 @@
                 </table>
             </div>
         </form>
+    </div>
     </div>
 </body>
 </html>
