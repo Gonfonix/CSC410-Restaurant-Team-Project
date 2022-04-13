@@ -35,7 +35,7 @@
                     </ul>
                 </div>
             </nav>
-    <div class="wrapper">
+    <div class="welcome-txt">
     <form id="form1" runat="server">
         <div>
             <h2>This page will have an interactive GUI for tables, and it will somehow be connected to a calendar</h2>

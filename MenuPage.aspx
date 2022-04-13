@@ -35,7 +35,9 @@
           </div>
       </nav>
     <br /><br />
-    <div class="wrapper">
+
+
+    <div class="welcome-txt">
         <h2>Cindric's Taco Palace - Menu</h2>
      <div class="grid">
     <br /><br />

@@ -37,7 +37,7 @@
             </nav>
 
     <form id="form1" runat="server">
-        
+        <div class="welcome-txt">
         <br />
         <h2>Please create a login:</h2>
         <br />
@@ -109,6 +109,7 @@
         <br />
         <asp:Label ID="lblStatus" runat="server" EnableViewState="False" ForeColor="Red" Font-Bold="True"></asp:Label>
         <a href="LoginPage.aspx">After Creating an Account Click Back Here</a>
+            </div>
     </form>
 </body>
 </html>

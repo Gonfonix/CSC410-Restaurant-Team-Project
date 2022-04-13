@@ -35,7 +35,7 @@
                     </ul>
                 </div>
             </nav>
-    <div class="wrapper">
+    <div class="welcome-txt">
     <form id="form1" runat="server">
         <div>
             <br />
