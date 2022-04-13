@@ -34,22 +34,22 @@ nav {
     text-align: center;
     width: 100%;
     min-height: 400px;
-    color: white;
+    color: black;
 }
 
     .welcome-txt a {
-        border: 1px solid white;
+        border: 1px solid black;
         padding: 10px 25px;
         text-decoration: none;
         font-size: 14px;
         margin-top: 20px;
         display: block;
-        color: white;
+        color: black;
     }
 
         .welcome-txt a:hover {
-            background: white;
-            color: black;
+            background: black;
+            color: white;
         }
 
 .quotes {
