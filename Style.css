@@ -4,6 +4,7 @@
 }
 
 /**********************************************************************************************************************/
+
 /*Main Page Image*/
 .mainPageImg {
     background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), 
@@ -13,6 +14,7 @@
     background-position: center center;
     position: relative;
 }/*End Main Page Image*/
+
 
 /*Main Page Nav*/
  .mainPageNav {
@@ -31,9 +33,12 @@
 
         .mainPageNav li a {
             display: block;
+            padding: 8px;
             border: 2px solid white;
             border-radius: 4px;
             background-color: #ffffffffff00;
+            color: white;
+            font-size: 16px;
             -webkit-transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
             transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
             font-family: Arial;
@@ -84,14 +89,14 @@
 
     .mainPageTxt a {
         display: block;
-        padding: 6px;
+        padding: 8px;
         border: 2px solid white;
         border-radius: 4px;
         color: white;
         -webkit-transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
         transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
         font-family: Arial;
-        font-size: 16px;
+        font-size: 18px;
         line-height: 22px;
         text-align: center;
         text-decoration: none; 
@@ -104,17 +109,18 @@
         background-color: white;
         color: black !important;
     }/*End Main Page Text*/
+
 /******************************************************************************************************************************/
 
 body {
-    background: rgba(25, 25, 25, 0.8);
+    background: rgba(10, 10, 10, 0.8);
 }
 
 
 nav {
     width: auto;
     height: auto;
-    background-color: #854D27;
+    background-color: rgba(0,0,0,0.8);
 }
 
 
@@ -163,18 +169,18 @@ nav {
         background-image: url(Image/Nathon2.JPG);
     }
 
-ul {
+.wrapper ul {
     margin-left: 0px;
 }
 
-    ul li {
+    .wrapper ul li {
         list-style: none;
         display: inline-block;
         float: right;
         line-height: 100px;
     }
 
-        ul li a {
+        .wrapper ul li a {
             display: block;
             padding: 6px;
             border-style: solid;
@@ -195,7 +201,7 @@ ul {
             text-transform: capitalize;
         }
 
-            ul li a:hover {
+            .wrapper ul li a:hover {
                 border-color: #fff;
                 background-color: #fff;
                 color: #303fe1 !important;
@@ -205,6 +211,10 @@ logo {
     left: 80px;
     top: 20px;
 }
+
+    logo:hover {
+        transform: scale(1.1);
+    }
 
 grid {
     display: grid;
