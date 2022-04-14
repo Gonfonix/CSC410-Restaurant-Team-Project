@@ -8,6 +8,7 @@ body {
     background-color: #f4c95d;
 }
 
+/*Main Page Image*/
 .mainPageImg {
     background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), 
     url("Image/JucyTaco.jpg");
@@ -15,13 +16,104 @@ body {
     background-size: cover;
     background-position: center center;
     position: relative;
+}/*End Main Page Image*/
+
+
+/*Main Page Nav*/
+.mainPageNav {
+    float: right;
+    list-style: none;
+    margin-top: 20px;
+    padding-right: 10px;
+    /*border: 3px solid red;*/
 }
+
+    .mainPageNav ul {
+        display: inline-block;
+        /*border: 2px solid green;*/
+    }
+
+    .mainPageNav li a {
+        display: block;
+        padding: 6px;
+        border-style: solid;
+        border-width: 2px;
+        border-color: black;
+        border-radius: 4px;
+        background-color: black;
+        -webkit-transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
+        transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
+        font-family: 'Space Grotesk', sans-serif;
+        color: white;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: 0.4px;
+        text-decoration: none;
+    }
+
+    .mainPageNav li a:hover {
+        border-color: white;
+        background-color: white;
+        color: black;
+    }/*End Main Page Nav*/
+
+
+/*Main Page Logo*/
+.mainPageLogo img {
+    float: left;
+    padding-left: 20px;
+    padding-top: 10px;
+}/*End Main Page Logo*/
+
+
+/*Main Page Text*/
+.mainPageTxt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    min-height: 400px;
+    color: white;
+}
+
+    .mainPageTxt h1 {
+        font-size: 50px;
+        font-family: Arial;
+        transition: all .4s ease-in-out;
+    }
+
+    .mainPageTxt h1:hover {
+        transform: scale(1.1);
+    }
+
+    .mainPageTxt a {
+        border: 2px solid white;
+        padding: 10px 25px;
+        text-decoration: none;
+        font-size: 20px;
+        margin-top: 20px;
+        display: block;
+        color: white;
+        font-family: Arial;
+    }
+
+    .mainPageTxt a:hover {
+        background: white;
+        color: black;
+    }/*End Main Page Text*/
+
 
 nav {
     width: auto;
     height: auto;
     background-color: #854D27;
 }
+
 
 .wrapper {
     max-width: 1170px;
@@ -31,45 +123,6 @@ nav {
     padding-right: 16px;
 }
 
-
-
-.welcome-txt {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    min-height: 400px;
-    color: black;
-}
-
-    .welcome-txt h1 {
-        font-size: 50px;
-        font-family: Arial;
-        transition: all .4s ease-in-out;
-    }
-
-    .welcome-txt h1:hover {
-        transform: scale(1.1);
-    }
-
-    .welcome-txt a {
-        border: 2px solid black;
-        padding: 10px 25px;
-        text-decoration: none;
-        font-size: 20px;
-        margin-top: 20px;
-        display: block;
-        color: black;
-        font-family: Arial;
-    }
-
-        .welcome-txt a:hover {
-            background: black;
-            color: white;
-        }
 
 .quotes {
     font-family: 'Comic Sans MS';
