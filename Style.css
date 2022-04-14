@@ -45,6 +45,8 @@ body {
             line-height: 22px;
             text-align: center;
             text-decoration: none;
+            letter-spacing: 0.4px;
+            font-weight: 700;
         }
 
     .mainPageNav li a:hover {
@@ -96,7 +98,9 @@ body {
         font-size: 16px;
         line-height: 22px;
         text-align: center;
-        text-decoration: none
+        text-decoration: none; 
+        letter-spacing: 0.4px;
+        font-weight: 700;
     }
 
     .mainPageTxt a:hover {
