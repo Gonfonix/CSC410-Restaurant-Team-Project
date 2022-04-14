@@ -3,11 +3,7 @@
     margin: 0px;
 }
 
-
-body {
-    background-color: #f4c95d;
-}
-
+/**********************************************************************************************************************/
 /*Main Page Image*/
 .mainPageImg {
     background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), 
@@ -108,6 +104,11 @@ body {
         background-color: white;
         color: black !important;
     }/*End Main Page Text*/
+/******************************************************************************************************************************/
+
+body {
+    background: rgba(25, 25, 25, 0.8);
+}
 
 
 nav {
