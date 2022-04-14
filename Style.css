@@ -18,47 +18,18 @@ body {
     position: relative;
 }/*End Main Page Image*/
 
+ .mainPageNav {
+     padding-right: 20px;
+     padding-top: 10px;
+     float: right;
+     position: relative;
+     z-index: 10;
+ }
 
-/*Main Page Nav*/
-.mainPageNav {
-    float: right;
-    list-style: none;
-    margin-top: 20px;
-    padding-right: 10px;
-    /*border: 3px solid red;*/
-}
-
-    .mainPageNav ul li {
-        display: inline-block;
-        /*border: 2px solid green;*/
-    }
-
-    .mainPageNav ul li a {
-        display: block;
-        padding: 6px;
-        border-style: solid;
-        border-width: 2px;
-        border-color: black;
-        border-radius: 4px;
-        background-color: black;
-        -webkit-transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
-        transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
-        font-family: 'Space Grotesk', sans-serif;
-        color: white;
-        font-size: 14px;
-        line-height: 22px;
-        font-weight: 700;
-        text-align: center;
-        letter-spacing: 0.4px;
-        text-decoration: none;
-    }
-
-    .mainPageNav ul li a:hover {
-        border-color: white;
-        background-color: white;
-        color: black !important;
-    }/*End Main Page Nav*/
-
+ .mainPageNav li {
+     list-style: none;
+     display: inline-block;
+ }
 
 /*Main Page Logo*/
 .mainPageLogo img {
@@ -181,7 +152,7 @@ ul {
             background-color: #303fe1;
             -webkit-transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
             transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
-            /*font-family: 'Space Grotesk', sans-serif;*/
+            font-family: 'Space Grotesk', sans-serif;
             color: #fff;
             font-size: 14px;
             line-height: 22px;
