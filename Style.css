@@ -28,12 +28,12 @@ body {
     /*border: 3px solid red;*/
 }
 
-    .mainPageNav ul {
+    .mainPageNav ul li {
         display: inline-block;
         /*border: 2px solid green;*/
     }
 
-    .mainPageNav li a {
+    .mainPageNav ul li a {
         display: block;
         padding: 6px;
         border-style: solid;
@@ -53,10 +53,10 @@ body {
         text-decoration: none;
     }
 
-    .mainPageNav li a:hover {
+    .mainPageNav ul li a:hover {
         border-color: white;
         background-color: white;
-        color: black;
+        color: black !important;
     }/*End Main Page Nav*/
 
 
