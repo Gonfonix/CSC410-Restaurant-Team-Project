@@ -70,18 +70,23 @@
     <Content Include="AdminPage.aspx" />
     <Content Include="CreateLoginPage.aspx" />
     <Content Include="Default.html" />
+    <Content Include="Image\A happy customer.png" />
     <Content Include="Image\ChefAJ.jpg" />
     <Content Include="Image\JucyTaco.jpg" />
     <Content Include="Image\kylechef.jpg" />
+    <Content Include="Image\Learning code.jpg" />
+    <Content Include="Image\My Hero the Cow.jpg" />
     <Content Include="Image\Nathon.jpg" />
     <Content Include="Image\Nathon2.JPG" />
     <Content Include="Image\RestaurantLogo.png" />
+    <Content Include="Image\TacoPalace.jpg" />
     <Content Include="LoginPage.aspx" />
     <Content Include="MenuPage.aspx" />
     <Content Include="Restaurant.aspx" />
     <Content Include="Resveration.aspx" />
     <Content Include="Staff.aspx" />
     <Content Include="Style.css" />
+    <Content Include="StyleSheetRestaurnt.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

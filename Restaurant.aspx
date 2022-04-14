@@ -5,7 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>About Cindri's Taco Palace</title>
-    <link rel="stylesheet" href="Style.css" />
+   <link rel="stylesheet" href="Style.css" />
+    <link rel="stylesheet" href="StyleSheetRestaurnt.css" />
 </head>
 <body>
     <nav>
@@ -36,7 +37,7 @@
         </div>
     </nav>
 
-    <div class="wrapper">
+  <%--<div class="wrapper">
     <div class="quotes">
         <form id="form1" runat="server">
             <div>
@@ -46,7 +47,8 @@
                 <table>
                     <tr>
                         <td>
-                            <h4>At Cindric’s Taco palace our mission is to provide the freshest ingredients, bring joy and laughter to our customers, while also providing educational entertainment. </h4>
+                            At Cindric’s Taco palace our mission is to
+                            <h4>We provide the freshest ingredients, bring joy and laughter to our customers, while also providing educational entertainment. </h4>
                         </td>
                     </tr>
                     <tr>
@@ -58,6 +60,56 @@
             </div>
         </form>
     </div>
-    </div>
+    </div>--%>
+
+
+    <div class="mainPageTxt">
+  
+        <table>
+            <tr>
+                <td>
+                    <div class="view view-first"    
+        <img src="Image/A happy customer.png" /> 
+     <div class="mask">  
+     <h2>Happy Customer</h2>  
+     <p>As part of our mission, customer happiness comes first. Our staff has been trained to unleach some mightly jokes if you are feeling down. Just ask!</p>  
+        </div> 
+     <div />
+                </td>
+                <td>
+                                 <div class="view view-first"    
+        <img src="Image/A happy customer.png" /> 
+     <div class="mask">  
+     <h2>Happy Customer</h2>  
+     <p>Your Text</p>  
+        </div> 
+     <div />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                                             <div class="view view-first"    
+        <img src="Image/A happy customer.png" /> 
+     <div class="mask">  
+     <h2>Happy Customer</h2>  
+     <p>Your Text</p>  
+        </div> 
+     <div />
+                </td>
+                <td>
+                                             <div class="view view-first"    
+        <img src="Image/A happy customer.png" /> 
+     <div class="mask">  
+     <h2>Happy Customer</h2>  
+     <p>Your Text</p>  
+        </div> 
+     <div />
+                </td>
+            </tr>
+        </table>
+        
+   </div>
+</div> 
 </body>
 </html>
+
