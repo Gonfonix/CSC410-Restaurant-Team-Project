@@ -5,8 +5,16 @@
 
 
 body {
-    background-color: #f4c95D;
-    height: auto;
+    background-color: #f4c95d;
+}
+
+.mainPageImg {
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), 
+    url("Image/JucyTaco.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
 }
 
 nav {
@@ -40,6 +48,11 @@ nav {
     .welcome-txt h1 {
         font-size: 50px;
         font-family: Arial;
+        transition: all .4s ease-in-out;
+    }
+
+    .welcome-txt h1:hover {
+        transform: scale(1.1);
     }
 
     .welcome-txt a {
