@@ -33,19 +33,19 @@ body {
         padding-left: 30px;
     }
 
-    .mainPageNav li a {
-        display: block;
-        border: 2px solid white;
-        border-radius: 4px;
-        background-color: black;
-        -webkit-transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
-        transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
-        font-family: Arial;
-        font-size: 16px;
-        line-height: 22px;
-        text-align: center;
-        text-decoration: none;
-    }
+        .mainPageNav li a {
+            display: block;
+            border: 2px solid white;
+            border-radius: 4px;
+            background-color: #ffffffffff00;
+            -webkit-transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
+            transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
+            font-family: Arial;
+            font-size: 16px;
+            line-height: 22px;
+            text-align: center;
+            text-decoration: none;
+        }
 
     .mainPageNav li a:hover {
         border-color: white;
@@ -89,7 +89,6 @@ body {
         padding: 6px;
         border: 2px solid white;
         border-radius: 4px;
-        background-color: black;
         color: white;
         -webkit-transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
         transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
@@ -177,7 +176,7 @@ ul {
             border-width: 2px;
             border-color: #303fe1;
             border-radius: 4px;
-            background-color: #303fe1;
+            /*background-color: #303fe1;*/
             -webkit-transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
             transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
             /*font-family: 'Space Grotesk', sans-serif;*/
