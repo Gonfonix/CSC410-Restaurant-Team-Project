@@ -37,77 +37,50 @@
         </div>
     </nav>
 
-  <%--<div class="wrapper">
-    <div class="quotes">
-        <form id="form1" runat="server">
-            <div>
-                <br />
-                <h2>Mission Statment: </h2>
-                <br />
-                <table>
-                    <tr>
-                        <td>
-                            At Cindric’s Taco palace our mission is to
-                            <h4>We provide the freshest ingredients, bring joy and laughter to our customers, while also providing educational entertainment. </h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h5>somthing can go here</h5>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </form>
-    </div>
-    </div>--%>
-
-
     <div class="mainPageTxt">
-  
+        <h2>We provide the freshest ingredients, bring joy and laughter to our customers,</h2>
+        <h2>while also providing educational entertainment. </h2>
         <table>
             <tr>
                 <td>
-                    <div class="view view-first"    
-        <img src="Image/A happy customer.png" /> 
-     <div class="mask">  
-     <h2>Happy Customer</h2>  
-     <p>As part of our mission, customer happiness comes first. Our staff has been trained to unleach some mightly jokes if you are feeling down. Just ask!</p>  
-        </div> 
-     <div />
+                    <div class="view view-first">
+
+                        <div class="mask">
+                            <h2>Happy Customer</h2>
+                            <p>As part of our mission, customer happiness comes first. Our staff has been trained to unleach some mightly jokes if you are feeling down. Just ask!</p>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                                 <div class="view view-first"    
-        <img src="Image/A happy customer.png" /> 
-     <div class="mask">  
-     <h2>Happy Customer</h2>  
-     <p>Your Text</p>  
-        </div> 
-     <div />
+                    <div class="view view2 view-first">
+                        <div class="mask">
+                            <h2>The Best Beef</h2>
+                            <p>We've heard a rummer at Cindric's Taco Palace that happy cows taste the best. So, in response, our employees spend at least one hour a day at the local cow fields playing with the cows!</p>
+                        </div>
+                    </div>
                 </td>
             </tr>
             <tr>
                 <td>
-                                             <div class="view view-first"    
-        <img src="Image/A happy customer.png" /> 
-     <div class="mask">  
-     <h2>Happy Customer</h2>  
-     <p>Your Text</p>  
-        </div> 
-     <div />
+                    <div class="view view3 view-first">
+                        <div class="mask">
+                            <h2>Entertainment with Java</h2>
+                            <p>
+                                Albert Einstein once said, “The perfect place is where you can learn java and eat a Taco at the same time” So, our response is to give free lessons to our customers. Just ask, and we will provide. 
+                            </p>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                                             <div class="view view-first"    
-        <img src="Image/A happy customer.png" /> 
-     <div class="mask">  
-     <h2>Happy Customer</h2>  
-     <p>Your Text</p>  
-        </div> 
-     <div />
+                    <div class="view view4 view-first">
+                        <div class="mask">
+                            <h2>A place of joy</h2>
+                            <p>We hope to see you again here shortly. Please tell your friends about us. </p>
+                        </div>
+                    </div>
                 </td>
             </tr>
         </table>
-        
    </div>
 </div> 
 </body>
