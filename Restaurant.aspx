@@ -27,13 +27,14 @@
                 <li>
                     <a href="MenuPage.aspx">Menu</a>
                 </li>
-
-                <div class="logo">
-                    <a href="Default.html">
-                        <image style="height: 100px" ; src="Image/RestaurantLogo.png"></image>
-                    </a>
-                </div>
             </ul>
+            
+            <div class="logo">
+                <a href="Default.html">
+                    <image style="height: 100px" ; src="Image/RestaurantLogo.png"></image>
+                </a>
+            </div>
+
         </div>
     </nav>
 
@@ -82,7 +83,6 @@
             </tr>
         </table>
    </div>
-</div> 
 </body>
 </html>
 

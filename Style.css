@@ -113,14 +113,14 @@
 /******************************************************************************************************************************/
 
 body {
-    background: rgba(10, 10, 10, 0.8);
+    background: #5d5d5d;
 }
 
 
 nav {
     width: auto;
     height: auto;
-    background-color: rgba(0,0,0,0.8);
+    background-color: #444444;
 }
 
 
@@ -130,6 +130,7 @@ nav {
     margin-right: auto;
     padding-left: 16px;
     padding-right: 16px;
+    border: 2px solid red;
 }
 
 
@@ -208,13 +209,18 @@ nav {
             }
 
 logo {
-    left: 80px;
-    top: 20px;
+    float: left;
+    padding-left: 20px;
+    padding-top: 10px;
 }
 
-    logo:hover {
-        transform: scale(1.1);
-    }
+img {
+    transition: all .3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
 
 grid {
     display: grid;
