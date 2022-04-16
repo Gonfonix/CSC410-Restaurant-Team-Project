@@ -176,6 +176,7 @@ img {
     transition: all .3s ease-in-out;
     width: -moz-fit-content;
     width: fit-content;
+    font-family: Arial;
 }
 
     .centeredText:hover {
@@ -219,6 +220,17 @@ img {
     }
 
 .grid {
-    display: flex;
+    display: grid;
     justify-content: center;
+    font-family: Arial;
 }
+
+.grid td {
+    padding: 10px;
+    font-family: Arial;
+}
+
+    .grid th {
+        padding: 10px;
+        font-family: Arial;
+    }
