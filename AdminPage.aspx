@@ -28,7 +28,7 @@
                 </li>
                 <div class="logo">
                     <a href="Default.html">
-                         <image style="height: 100px" ; src="Image/RestaurantLogo.png"></image>
+                         <image class="navImg" style="height: 100px" ; src="Image/RestaurantLogo.png"></image>
                     </a>
                 </div>
             </ul>

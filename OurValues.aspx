@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
-        <title>About Cindri's Taco Palace</title>
+        <title>Cindric's Taco Palace - Values</title>
         <link rel="stylesheet" href="Style.css" />
         <link rel="stylesheet" href="StyleSheetRestaurnt.css" />
     </head>
@@ -28,7 +28,7 @@
             
             <div>
                 <a href="Default.html">
-                    <image style="height: 100px" ; src="Image/RestaurantLogo.png"></image>
+                    <image class="navImg" style="height: 100px" ; src="Image/RestaurantLogo.png"></image>
                 </a>
             </div>
         </nav>
