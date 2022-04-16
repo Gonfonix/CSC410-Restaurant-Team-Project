@@ -183,6 +183,17 @@ img {
         transform: scale(1.1);
     }
 
+.centeredTextNoHover {
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-family: Arial;
+}
+
 .quotes {
     font-family: 'Comic Sans MS';
     color: #DD7230;

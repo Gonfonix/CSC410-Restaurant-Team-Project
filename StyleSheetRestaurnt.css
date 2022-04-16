@@ -1,4 +1,9 @@
-﻿.view {
+﻿.centeredTable {
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.view {
     width: 300px;
     height: 200px;
     margin: 10px;
@@ -9,7 +14,10 @@
     text-align: center;
     box-shadow: 1px 1px 2px #e6e6e6;
     cursor: default;
-    background: #fff url('Image/A happy customer.png') no-repeat center center
+    background: #fff url('Image/HappyCustomer.jpg') no-repeat center center; 
+    background-size: cover;
+    background-position: center center;
+    position: relative;
 }
 
 .view2 {
@@ -23,7 +31,10 @@
     text-align: center;
     box-shadow: 1px 1px 2px #e6e6e6;
     cursor: default;
-    background: #fff url(Image/giphy.gif) no-repeat center center
+    background: #fff url(Image/giphy.gif) no-repeat center center; 
+    background-size: cover;
+    background-position: center 1px;
+    position: relative;
 }
 
 .view3 {
@@ -37,7 +48,10 @@
     text-align: center;
     box-shadow: 1px 1px 2px #e6e6e6;
     cursor: default;
-    background: #fff url('Image/Learning code.jpg') no-repeat center center
+    background: #fff url('Image/Learning code.jpg') no-repeat center center;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
 }
 
 .view4 {
@@ -51,7 +65,10 @@
     text-align: center;
     box-shadow: 1px 1px 2px #e6e6e6;
     cursor: default;
-    background: #fff url(Image/TacoPalace.jpg) no-repeat center center
+    background: #fff url(Image/TacoPalace.jpg) no-repeat center center;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
 }
 
     .view .mask, .view .content {
@@ -70,6 +87,7 @@
 
     .view h2 {
         text-transform: uppercase;
+        font-family: Arial;
         color: #fff;
         text-align: center;
         position: relative;
@@ -80,11 +98,10 @@
     }
 
     .view p {
-        font-family: Georgia, serif;
-        font-style: italic;
-        font-size: 12px;
+        font-family: Arial;
+        font-size: 14px;
         position: relative;
-        color: #fff;
+        color: black;
         padding: 10px 20px 20px;
         text-align: center
     }
@@ -109,7 +126,7 @@
 
 .view-first .mask {
     opacity: 0;
-    background-color: rgba(219,127,8, 0.7);
+    background-color: rgba(255, 204, 0, 0.7);
     transition: all 0.4s ease-in-out;
 }
 

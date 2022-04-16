@@ -70,10 +70,10 @@
     <Content Include="AdminPage.aspx" />
     <Content Include="CreateLoginPage.aspx" />
     <Content Include="Default.html" />
-    <Content Include="Image\A happy customer.png" />
     <Content Include="Image\ChefAJ.jpg" />
     <Content Include="Image\Cows.jpg" />
     <Content Include="Image\giphy.gif" />
+    <Content Include="Image\HappyCustomer.jpg" />
     <Content Include="Image\JucyTaco.jpg" />
     <Content Include="Image\kylechef.jpg" />
     <Content Include="Image\Learning code.jpg" />

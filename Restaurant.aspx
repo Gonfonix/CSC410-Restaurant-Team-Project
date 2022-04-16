@@ -3,45 +3,41 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>About Cindri's Taco Palace</title>
-   <link rel="stylesheet" href="Style.css" />
-    <link rel="stylesheet" href="StyleSheetRestaurnt.css" />
-</head>
-<body>
-    <nav>
-        <div>
+    <head runat="server">
+        <title>About Cindri's Taco Palace</title>
+        <link rel="stylesheet" href="Style.css" />
+        <link rel="stylesheet" href="StyleSheetRestaurnt.css" />
+    </head>
+    
+    <body>
+        <nav>
             <ul>
                 <li>
-                    <a href="LoginPage.aspx">Login</a>
+                    <a href="MenuPage.aspx">Menu</a>
                 </li>
                 <li>
                     <a href="Staff.aspx">Our Team</a>
                 </li>
                 <li>
-                    <a href="Restaurant.aspx">Our Values</a>
-                </li>
-                <li>
                     <a href="Resveration.aspx">Make a Resveration</a>
                 </li>
                 <li>
-                    <a href="MenuPage.aspx">Menu</a>
+                    <a href="LoginPage.aspx">Login</a>
                 </li>
             </ul>
             
-            <div class="logo">
+            <div>
                 <a href="Default.html">
                     <image style="height: 100px" ; src="Image/RestaurantLogo.png"></image>
                 </a>
             </div>
-
-        </div>
-    </nav>
-
-    <div class="mainPageTxt">
-        <h2>We provide the freshest ingredients, bring joy and laughter to our customers,</h2>
-        <h2>while also providing educational entertainment. </h2>
-        <table>
+        </nav>
+        
+        <br />
+        <h2 class="centeredText">At Cindric's Taco Palace, our goal is to provide the greatest customer experience. <br /><br /></h2>
+        <h3 class="centeredTextNoHover">(Scroll over the images to view our values.)</h3>
+        
+        <table class="centeredTable">
             <tr>
                 <td>
                     <div class="view view-first">
@@ -82,7 +78,7 @@
                 </td>
             </tr>
         </table>
-   </div>
-</body>
+
+    </body>
 </html>
 
