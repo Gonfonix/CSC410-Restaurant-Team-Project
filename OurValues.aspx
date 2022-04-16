@@ -43,8 +43,8 @@
                     <div class="view view-first">
 
                         <div class="mask">
-                            <h2>Happy Customer</h2>
-                            <p>As part of our mission, customer happiness comes first. Our staff has been trained to unleach some mightly jokes if you are feeling down. Just ask!</p>
+                            <h2>Cuctomer Happiness</h2>
+                            <p>As part of our mission, customer happiness comes first above all else. Our staff has been trained to tell funny jokes if you are feeling down. Just ask a server at your next visit!</p>
                         </div>
                     </div>
                 </td>
@@ -52,7 +52,7 @@
                     <div class="view view2 view-first">
                         <div class="mask">
                             <h2>The Best Beef</h2>
-                            <p>We've heard a rummer at Cindric's Taco Palace that happy cows taste the best. So, in response, our employees spend at least one hour a day at the local cow fields playing with the cows!</p>
+                            <p>At Cindric's Taco Palace we beleive that happy cows mean happy customers. In response to this, our employees spend at least one hour a day at the local cow fields playing with the cows!</p>
                         </div>
                     </div>
                 </td>
@@ -63,7 +63,7 @@
                         <div class="mask">
                             <h2>Entertainment with Java</h2>
                             <p>
-                                Albert Einstein once said, “The perfect place is where you can learn java and eat a Taco at the same time” So, our response is to give free lessons to our customers. Just ask, and we will provide. 
+                                As Albert Einstein once said, “The perfect restaurant is where you can learn java and eat a jucy taco at the same time.” We strive to give our customers quality entertainment, so we provide free lessons in the java computer language for any taco you order! 
                             </p>
                         </div>
                     </div>
@@ -71,8 +71,8 @@
                 <td>
                     <div class="view view4 view-first">
                         <div class="mask">
-                            <h2>A place of joy</h2>
-                            <p>We hope to see you again here shortly. Please tell your friends about us. </p>
+                            <h2>We hope to see you soon!</h2>
+                            <p>As stated, we strive to provide the greatest experience possible for our customers. We hope this means you will come back to our fine establishment in the future. Please tell your familiy and friends about us, and feel free to give us a nice 5 star review! </p>
                         </div>
                     </div>
                 </td>
