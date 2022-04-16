@@ -84,7 +84,7 @@
     <Content Include="Image\TacoPalace.jpg" />
     <Content Include="LoginPage.aspx" />
     <Content Include="MenuPage.aspx" />
-    <Content Include="Restaurant.aspx" />
+    <Content Include="OurValues.aspx" />
     <Content Include="Resveration.aspx" />
     <Content Include="Staff.aspx" />
     <Content Include="Style.css" />
@@ -121,12 +121,12 @@
       <DependentUpon>MenuPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Restaurant.aspx.cs">
-      <DependentUpon>Restaurant.aspx</DependentUpon>
+    <Compile Include="OurValues.aspx.cs">
+      <DependentUpon>OurValues.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Restaurant.aspx.designer.cs">
-      <DependentUpon>Restaurant.aspx</DependentUpon>
+    <Compile Include="OurValues.aspx.designer.cs">
+      <DependentUpon>OurValues.aspx</DependentUpon>
     </Compile>
     <Compile Include="Resveration.aspx.cs">
       <DependentUpon>Resveration.aspx</DependentUpon>
