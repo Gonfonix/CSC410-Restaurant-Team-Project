@@ -10,7 +10,7 @@
 </head>
 <body>
     <nav>
-        <div class="wrapper">
+        <div>
             <ul>
                 <li>
                     <a href="LoginPage.aspx">Login</a>

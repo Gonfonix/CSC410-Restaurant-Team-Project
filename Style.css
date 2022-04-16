@@ -36,7 +36,6 @@
             padding: 8px;
             border: 2px solid white;
             border-radius: 4px;
-            background-color: #ffffffffff00;
             color: white;
             font-size: 16px;
             -webkit-transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
@@ -60,7 +59,7 @@
 .mainPageLogo img {
     float: left;
     padding-left: 20px;
-    padding-top: 10px;
+    padding-top: 20px;
 }/*End Main Page Logo*/
 
 
@@ -116,23 +115,72 @@ body {
     background: #5d5d5d;
 }
 
-
 nav {
     width: auto;
     height: auto;
     background-color: #444444;
 }
 
+    nav ul {
+        padding-right: 40px;
+        padding-top: 30px;
+        float: right;
+    }
 
-.wrapper {
-    max-width: 1170px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 16px;
-    padding-right: 16px;
-    border: 2px solid red;
+        nav ul li {
+            list-style: none;
+            display: inline-block;
+            padding-left: 30px;
+        }
+
+            nav ul li a {
+                display: block;
+                padding: 8px;
+                border: 2px solid white;
+                border-radius: 4px;
+                color: white;
+                font-size: 16px;
+                -webkit-transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
+                transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
+                font-family: Arial;
+                font-size: 16px;
+                line-height: 22px;
+                text-align: center;
+                text-decoration: none;
+                letter-spacing: 0.4px;
+                font-weight: 700;
+            }
+
+                nav ul li a:hover {
+                    border-color: white;
+                    background-color: white;
+                    color: black !important;
+                }
+
+img {
+    padding-left: 20px;
+    padding-top: 10px;
+    transition: all .3s ease-in-out;
 }
 
+    img:hover {
+        transform: scale(1.1);
+    }
+
+.centeredText {
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    transition: all .3s ease-in-out;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+    .centeredText:hover {
+        transform: scale(1.1);
+    }
 
 .quotes {
     font-family: 'Comic Sans MS';
@@ -170,75 +218,7 @@ nav {
         background-image: url(Image/Nathon2.JPG);
     }
 
-.wrapper ul {
-    margin-left: 0px;
-}
-
-    .wrapper ul li {
-        list-style: none;
-        display: inline-block;
-        float: right;
-        line-height: 100px;
-    }
-
-        .wrapper ul li a {
-            display: block;
-            padding: 6px;
-            border-style: solid;
-            border-width: 2px;
-            border-color: #303fe1;
-            border-radius: 4px;
-            /*background-color: #303fe1;*/
-            -webkit-transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
-            transition: border-color 300ms ease, color 300ms cubic-bezier(.23, 1, .32, 1), background-color 300ms ease;
-            /*font-family: 'Space Grotesk', sans-serif;*/
-            color: #fff;
-            font-size: 14px;
-            line-height: 22px;
-            font-weight: 700;
-            text-align: center;
-            letter-spacing: 0.4px;
-            text-decoration: none;
-            text-transform: capitalize;
-        }
-
-            .wrapper ul li a:hover {
-                border-color: #fff;
-                background-color: #fff;
-                color: #303fe1 !important;
-            }
-
-logo {
-    float: left;
-    padding-left: 20px;
-    padding-top: 10px;
-}
-
-img {
-    transition: all .3s ease-in-out;
-}
-
-img:hover {
-    transform: scale(1.1);
-}
-
-grid {
-    display: grid;
-    grid-template-columns: 50%;
-}
-
-.grid td {
-    padding: 10px;
-    border: 1px solid #c1c1c1;
-    color: #444;
-    font-size: 1em;
-}
-
-.grid th {
-    padding: 4px 2px;
-    color: #707083;
-    text-shadow: 1px 1px 0px #ffffff;
-    border: 1px solid #c1c1c1;
-    font-size: 1em;
-    text-align: center;
+.grid {
+    display: flex;
+    justify-content: center;
 }

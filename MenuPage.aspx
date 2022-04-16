@@ -3,63 +3,55 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <link rel="stylesheet" href="Style.css" />
-    <title>Menu Page</title>
-</head>
-<body>
-    <nav>
-        <div class="wrapper">
+    <head runat="server">
+        <link rel="stylesheet" href="Style.css" />
+        <title>Cindric's Taco Palace - Menu</title>
+    </head>
+
+    <body>
+        <nav>
             <ul>
                 <li>
-                    <a href="LoginPage.aspx">Login</a>
+                    <a href="Restaurant.aspx">Our Values</a>
                 </li>
                 <li>
                     <a href="Staff.aspx">Our Team</a>
                 </li>
                 <li>
-                    <a href="Restaurant.aspx">Our Values</a>
-                </li>
-                <li>
                     <a href="Resveration.aspx">Make a Resveration</a>
                 </li>
                 <li>
-                    <a href="MenuPage.aspx">Menu</a>
+                    <a href="LoginPage.aspx">Login</a>
                 </li>
-                <div class="logo">
-                    <a href="Default.html">
-                         <image style="height: 100px" ; src="Image/RestaurantLogo.png"></image>
-                    </a>
-                </div>
             </ul>
-        </div>
-    </nav>
-    <br />
-    <br />
+            <div>
+                <a href="Default.html">
+                    <image style="height: 100px" ; src="Image/RestaurantLogo.png"></image>
+                </a>
+            </div>
+        </nav>
+        <br />
+        <br />
 
+        <h1 class="centeredText">Cindric's Taco Palace - Menu</h1>
 
-    <div class="wrapper">
-        <div class="quotes">
-            <h2>Cindric's Taco Palace - Menu</h2>
-        </div>
+        <br />
+        <br />
         <div class="grid">
-            <br />
-            <br />
             <form id="form1" runat="server">
-                <div class="grid"></div>
-                <asp:GridView ID="gvMenu" runat="server" DataSourceID="sdsMenu" AutoGenerateColumns="False" AllowSorting="True" BackColor="#FFCC99" BorderColor="Black" BorderWidth="1px" ForeColor="Black">
+                <asp:GridView ID="gvMenu" runat="server" DataSourceID="sdsMenu" AutoGenerateColumns="False" AllowSorting="True" BackColor="White" BorderColor="Black" BorderWidth="2px" ForeColor="Black" BorderStyle="Solid" Font-Names="Arial" Font-Size="Large">
+                    <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="ItemName" HeaderText="Name" SortExpression="ItemName" />
                         <asp:BoundField DataField="ItemDescription" HeaderText="Description" SortExpression="ItemDescription" />
                         <asp:BoundField DataField="ItemPrice" HeaderText="Price" SortExpression="ItemPrice" DataFormatString="{0:c}"></asp:BoundField>
                     </Columns>
-                    <HeaderStyle BackColor="#FF9933" Font-Bold="False" ForeColor="Black" HorizontalAlign="Center" />
+                    <HeaderStyle BackColor="#FFCC00" Font-Bold="False" ForeColor="Black" HorizontalAlign="Center" Font-Italic="True" />
                     <RowStyle HorizontalAlign="Center" />
                 </asp:GridView>
-
-                <asp:SqlDataSource ID="sdsMenu" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" SelectCommand="SELECT [ItemName], [ItemDescription], [ItemPrice] FROM [MenuItem] ORDER BY [ItemName], [ItemPrice]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="sdsMenu" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" 
+                    SelectCommand="SELECT [ItemName], [ItemDescription], [ItemPrice] FROM [MenuItem] ORDER BY [ItemName], [ItemPrice]"></asp:SqlDataSource>
+            </form>
         </div>
-        </form>
-    </div>
-</body>
+    </body>
 </html>
