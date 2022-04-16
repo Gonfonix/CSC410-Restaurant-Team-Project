@@ -19,7 +19,7 @@
                     <a href="Staff.aspx">Our Team</a>
                 </li>
                 <li>
-                    <a href="Restaurant.aspx">Our Values</a>
+                    <a href="OurValues.aspx">Our Values</a>
                 </li>
                 <li>
                     <a href="Resveration.aspx">Make a Resveration</a>
