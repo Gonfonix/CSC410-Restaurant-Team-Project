@@ -34,10 +34,13 @@
         
         <br />
         <br />
+
         <div class="loginWrapper">
-            <br />
-            <h1 class="centeredText">Please Login to Make a Reservation: </h1>
-            <br />
+        
+        <br />
+        <br />
+        <h1 class="centeredText">Please Login to Make a Reservation: </h1>
+        <br />
         
             <form id="form1" runat="server">
             
@@ -67,30 +70,20 @@
                         <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="150px" Height="18px"></asp:TextBox>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <br />
-                    </td>
-                    <td>
-                        <br />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        
-                    </td>
-                    <td>
-                        <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Width="100px" BackColor="White" Font-Names="Arial" ForeColor="Black" Height="32px" />
-                    </td>
-                </tr>
             </table>
-            <br />
+            
+            <div class="centerLogin-label-btn">
+                <asp:Label ID="lblStatus" runat="server" EnableViewState="False" Font-Bold="True" ForeColor="Red"></asp:Label>
+                <br />
+                <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Width="100px" BackColor="White" Font-Names="Arial" ForeColor="Black" Height="32px" />
+            </div>
+            
+            <br />    
                 <p class="centeredTextNoHover">
                 <a href="CreateLoginPage.aspx">Create a new login</a>
                 </p>
             <br />
             <br />
-            <asp:Label ID="lblStatus" runat="server" EnableViewState="False" Font-Bold="True" ForeColor="Red"></asp:Label>
 
             </form>
 
