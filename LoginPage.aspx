@@ -3,43 +3,41 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="Style.css" />
+    <head runat="server">
+        <title>Cindric's Taco Palace - Login</title>
+        <link rel="stylesheet" href="Style.css" />
+    </head>
 
-</head>
-<body>
-    <nav>
-        <div class="wrapper">
+    <body>
+        <nav>
             <ul>
                 <li>
-                    <a href="LoginPage.aspx">Login</a>
-                </li>
-                <li>
-                    <a href="Staff.aspx">Our Team</a>
+                    <a href="MenuPage.aspx">Menu</a>
                 </li>
                 <li>
                     <a href="OurValues.aspx">Our Values</a>
                 </li>
                 <li>
-                    <a href="Resveration.aspx">Make a Resveration</a>
+                    <a href="Staff.aspx">Our Team</a>
                 </li>
                 <li>
-                    <a href="MenuPage.aspx">Menu</a>
+                    <a href="Resveration.aspx">Make a Resveration</a>
                 </li>
-
-                <div class="logo">
-                    <a href="Default.html">
-                        <image class="navImg" style="height: 100px" ; src="Image/RestaurantLogo.png"></image>
-                    </a>
-                </div>
             </ul>
-        </div>
-    </nav>
-    <div class="wrapper">
-        <div class="quotes">
-        <h2>Cindric's Taco Palace - Login</h2>
+            
+            <div>
+                <a href="Default.html">
+                    <image class="navImg" style="height: 100px" ; src="Image/RestaurantLogo.png"></image>
+                </a>
+            </div>
+        </nav>
+        
         <br />
+        <div class="loginWrapper">
+        <br />
+        <h2 class="centeredText">Please Login to Make a Reservation: </h2>
+        <br />
+
         <form id="form1" runat="server">
             <asp:SqlDataSource ID="sdsLogin" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" SelectCommand="SELECT * FROM [Customer], [Employee]"></asp:SqlDataSource>
             <table>
@@ -68,11 +66,10 @@
             <br />
             <a href="CreateLoginPage.aspx">Create a new login</a>
             <br />
+            <br />
             <asp:Label ID="lblStatus" runat="server" EnableViewState="False" Font-Bold="True" ForeColor="Red"></asp:Label>
 
         </form>
-    </div>
-    </div>
-
-</body>
+        </div>
+    </body>
 </html>

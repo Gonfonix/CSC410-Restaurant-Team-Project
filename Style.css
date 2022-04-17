@@ -278,3 +278,15 @@ nav {
     font-family: Arial;
     font-size: 20px;
 }
+
+.loginWrapper {
+    margin: 0 auto;
+    max-width: 1000px;
+    border: 2px solid red;
+    border-radius: 4px;
+    background-color: #444444;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
