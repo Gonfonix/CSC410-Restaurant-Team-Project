@@ -43,7 +43,7 @@
                     <div class="view view-first">
 
                         <div class="mask">
-                            <h2>Cuctomer Happiness</h2>
+                            <h2>Customer Happiness</h2>
                             <p>As part of our mission, customer happiness comes first above all else. Our staff has been trained to tell funny jokes if you are feeling down. Just ask a server at your next visit!</p>
                         </div>
                     </div>

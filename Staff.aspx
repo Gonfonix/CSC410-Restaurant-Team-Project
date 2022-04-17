@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
         <link rel="stylesheet" href="Style.css" />
-        <title>About our staff and their accomplishments</title>
+        <title>Cindric's Taco Palace - Staff</title>
     </head>
     
     <body>
