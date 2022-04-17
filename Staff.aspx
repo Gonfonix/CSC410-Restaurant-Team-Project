@@ -33,6 +33,7 @@
         </nav>
         
         <br />
+        <br />
         <h1 class="centeredText">About Our Staff and Their Accomplishments: </h1>
         <br />
         <p class="centeredTextNoHover">At Cindric's Taco palace, we care too much about our customers to

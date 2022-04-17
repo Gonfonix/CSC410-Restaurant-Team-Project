@@ -34,6 +34,7 @@
         </nav>
         
         <br />
+        <br />
         <h2 class="centeredText">At Cindric's Taco Palace, our goal is to provide the greatest customer experience. <br /><br /></h2>
         <h3 class="centeredTextNoHover">(Scroll over the images to view our values.)</h3>
         

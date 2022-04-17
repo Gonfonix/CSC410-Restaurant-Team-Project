@@ -69,12 +69,12 @@ namespace CSC_410_Team_Project_Restaurant
                 }
                 else
                 {
-                    lblStatus.Text = "Invalid User Name or Password";
+                    lblStatus.Text = "Invalid User Name or Password.";
                 }
             }
             else
             {
-                lblStatus.Text = "Please enter both a User Name and a Password";
+                lblStatus.Text = "Please enter both a User Name and a Password.";
             }
         }
     }
