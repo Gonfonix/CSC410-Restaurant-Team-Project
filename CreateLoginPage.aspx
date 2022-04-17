@@ -79,7 +79,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblUsername" runat="server" Text="Username: "></asp:Label>
+                        <asp:Label ID="lblUsername" runat="server" Text="Username*: "></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="txtUsername" runat="server" Width="250px"></asp:TextBox>
@@ -95,7 +95,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblPassword" runat="server" Text="Password: "></asp:Label>
+                        <asp:Label ID="lblPassword" runat="server" Text="Password*: "></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="txtPassword" runat="server" Width="250px"></asp:TextBox>
@@ -111,7 +111,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblEmail" runat="server" Text="Email: "></asp:Label>
+                        <asp:Label ID="lblEmail" runat="server" Text="Email*: "></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="txtEmail" runat="server" Width="250px"></asp:TextBox>
