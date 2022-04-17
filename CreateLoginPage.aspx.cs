@@ -52,12 +52,13 @@ namespace CSC_410_Team_Project_Restaurant
 					numRowsAffected = cmd.ExecuteNonQuery();
 					if (numRowsAffected == 1)
 					{
-						lblStatus.Text = "Account created, thanks for joining.";
+						lblStatus.Text = "Account Created, thanks for joining!";
 						txtEmail.Text = "";
 						txtUsername.Text = "";
 						txtPassword.Text = "";
 						txtFirstName.Text = "";
 						txtLastName.Text = "";
+						Response.Redirect("LoginPage.aspx");
 					}
 					else
 					{
@@ -66,13 +67,13 @@ namespace CSC_410_Team_Project_Restaurant
 				}
 				catch (Exception ex)
 				{
-					lblStatus.Text = "Account not created. There is already an email associated with: " + email;
+					lblStatus.Text = "Account not created. There is already an Email associated with: " + email;
 				}
 				conn.Close();
 			}
 			else
 			{
-				lblStatus.Text = "Please enter a username, password, and email before trying to create an account.";
+				lblStatus.Text = "Please enter at least a User Name, Password, and an Email before trying to create an account.";
 			}
 		
         }
