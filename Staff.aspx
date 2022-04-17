@@ -35,12 +35,11 @@
         <br />
         <h1 class="centeredText">About Our Staff and Their Accomplishments: </h1>
         <br />
-        <h3 class="centeredTextNoHover">At Cindric's Taco palace, we care too much about our customers to
+        <p class="centeredTextNoHover">At Cindric's Taco palace, we care too much about our customers to
             give them anything less than perfect. We have partnered with Tony Soprano, a
             significant influencer who will oversee our employees' behavior and teach them the trait of respect
             and giving to our customers. We value employees and customer relationships, and we believe excellent
-            customer service goes beyond inside the walls of Cindric Taco palace. </h3>
-        <br />
+            customer service goes beyond inside the walls of Cindric Taco palace. </p>
         <br />
 
         <table>

@@ -33,43 +33,67 @@
         </nav>
         
         <br />
+        <br />
         <div class="loginWrapper">
-        <br />
-        <h2 class="centeredText">Please Login to Make a Reservation: </h2>
-        <br />
-
-        <form id="form1" runat="server">
+            <br />
+            <h1 class="centeredText">Please Login to Make a Reservation: </h1>
+            <br />
+        
+            <form id="form1" runat="server">
+            
             <asp:SqlDataSource ID="sdsLogin" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" SelectCommand="SELECT * FROM [Customer], [Employee]"></asp:SqlDataSource>
             <table>
                 <tr>
                     <td>
-                        <asp:Label ID="lblUserName" runat="server" Text="User name:"></asp:Label>
+                        <asp:Label ID="lblUserName" runat="server" Text="User Name: "></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtUserName" runat="server" Width="150px" Height="18px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
+                        <br />
                     </td>
                     <td>
-                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="150px"></asp:TextBox>
+                        <br />
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">
-                        <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
+                    <td>
+                        <asp:Label ID="lblPassword" runat="server" Text="Password: "></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="150px" Height="18px"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br />
+                    </td>
+                    <td>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Width="100px" BackColor="White" Font-Names="Arial" ForeColor="Black" Height="32px" />
                     </td>
                 </tr>
             </table>
             <br />
-            <a href="CreateLoginPage.aspx">Create a new login</a>
+                <p class="centeredTextNoHover">
+                <a href="CreateLoginPage.aspx">Create a new login</a>
+                </p>
             <br />
             <br />
             <asp:Label ID="lblStatus" runat="server" EnableViewState="False" Font-Bold="True" ForeColor="Red"></asp:Label>
 
-        </form>
-        </div>
+            </form>
+
+        </div> <%--End Login Wrapper--%>
     </body>
 </html>

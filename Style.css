@@ -282,11 +282,27 @@ nav {
 .loginWrapper {
     margin: 0 auto;
     max-width: 1000px;
-    border: 2px solid red;
-    border-radius: 4px;
-    background-color: #444444;
-    align-items: center;
+    border-radius: 6px;
+    background-color: #787976;
     justify-content: center;
-    text-align: center;
     color: white;
 }
+
+.loginWrapper table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loginWrapper tr td {
+    font-family: Arial;
+    font-size: 18px;
+}
+
+    .loginWrapper a {
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        font-family: Arial;
+    }
