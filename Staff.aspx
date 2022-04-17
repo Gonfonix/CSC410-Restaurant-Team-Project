@@ -49,34 +49,34 @@
                     <image class="StaffImgAJ" src="Image/ChefAJ.jpg"></image>
                 </td>
                 <td>
-                    <h3 style="margin-left: 20px;"><u>AJ Hammond: Chef de cuisine</u></h3>
-                            <br />
-                            <h2 style="margin-left: 20px;"><q>I spent my whole life studying and preparing myself to be an ethical
-                            hacker. But then I took a bite of the scrumptious netbeans taco. And from
-                            that moment on, I knew I wanted to work at Cindric’s Taco Palace.</q> </h2>
+                    <h2 class="staffText"><u>AJ Hammond: Chef de cuisine</u></h2>
+                    <br />
+                    <p class="staffQuotes">"I spent my whole life studying and preparing myself to be an ethical
+                    hacker. But then I took a bite of the scrumptious netbeans taco. And from
+                    that moment on, I knew I wanted to work at Cindric’s Taco Palace."<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp - AJ Hammond</p>
                 </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <image class="StaffImgKS" src="Image/kylechef.jpg"></image>
-                        </td>
-                        <td>
-                            <h3 style="margin-left: 20px;"><u>Kyle Spencer: Sous Chef </u></h3>
-                            <br />
-                            <h2 style="margin-left: 20px"><q>I want to be... where the tacos are</q></h2>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <image class="StaffImgN"></image>
-                        </td>
-                        <td>
-                            <h3 style="margin-left: 20px;"><u>Nathon Williams: Lead Bartender </u></h3>
-                            <br />
-                            <h2 style="margin-left: 20px;">After consuming many amazing and jucy tacos from Cindric's Taco Palace, I have inherited the ability to grow a mustache in an instant.
-                            Take your cursor over my picture to see!</h2>
-                        </td>
-                    </tr>
-                </table>
+            </tr>
+            <tr>
+                 <td>
+                    <image class="StaffImgKS" src="Image/kylechef.jpg"></image>
+                 </td>
+                 <td>
+                    <h2 class="staffText"><u>Kyle Spencer: Sous Chef</u></h2>
+                    <br />
+                    <p class="staffQuotes">"I want to be... where the tacos are"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp - Kyle Spencer</p>
+                 </td>
+            </tr>
+            <tr>
+                 <td>
+                    <image class="StaffImgN"></image>
+                  </td>
+                  <td>
+                     <h2 class="staffText"><u>Nathon Williams: Lead Bartender</u></h2>
+                     <br />
+                     <p class="staffQuotes">"After consuming many amazing and jucy tacos from Cindric's Taco Palace, I have inherited the ability to grow a mustache in an instant.
+                     Take your cursor over my picture to see!"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp - Nathon Williams</p>
+                  </td>
+            </tr>
+        </table>
     </body>
 </html>
