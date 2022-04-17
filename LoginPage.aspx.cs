@@ -64,17 +64,17 @@ namespace CSC_410_Team_Project_Restaurant
                     }
                     else if (userType == "Customer")
                     {
-                        Response.Redirect("MenuPage.aspx");
+                        Response.Redirect("Reservation.aspx");
                     }
                 }
                 else
                 {
-                    lblStatus.Text = "Invalid Username or Password";
+                    lblStatus.Text = "Invalid User Name or Password";
                 }
             }
             else
             {
-                lblStatus.Text = "Please enter both a Username and a Password";
+                lblStatus.Text = "Please enter both a User Name and a Password";
             }
         }
     }
