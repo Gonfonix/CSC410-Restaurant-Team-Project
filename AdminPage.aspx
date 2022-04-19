@@ -39,18 +39,19 @@
     <div class="wrapper">
         <div class="quotes">
             <h2>The admin can change stuff on this page</h2>
-            <form id="form1" runat="server"></form>
+            <form id="form1" runat="server">
+                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ItemID" DataSourceID="sdsAdmin">
+                    <Columns>
+                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
+                        <asp:BoundField DataField="ItemID" HeaderText="ItemID" ReadOnly="True" SortExpression="ItemID" />
+                        <asp:BoundField DataField="ItemName" HeaderText="ItemName" SortExpression="ItemName" />
+                        <asp:BoundField DataField="ItemDescription" HeaderText="ItemDescription" SortExpression="ItemDescription" />
+                        <asp:BoundField DataField="ItemPrice" HeaderText="ItemPrice" SortExpression="ItemPrice" />
+                    </Columns>
+                </asp:GridView>
+            </form>
         </div>
     </div>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ItemID" DataSourceID="sdsAdmin">
-        <Columns>
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
-            <asp:BoundField DataField="ItemID" HeaderText="ItemID" ReadOnly="True" SortExpression="ItemID" />
-            <asp:BoundField DataField="ItemName" HeaderText="ItemName" SortExpression="ItemName" />
-            <asp:BoundField DataField="ItemDescription" HeaderText="ItemDescription" SortExpression="ItemDescription" />
-            <asp:BoundField DataField="ItemPrice" HeaderText="ItemPrice" SortExpression="ItemPrice" />
-        </Columns>
-    </asp:GridView>
     <asp:SqlDataSource ID="sdsAdmin" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" DeleteCommand="DELETE FROM [MenuItem] WHERE [ItemID] = @original_ItemID AND [ItemName] = @original_ItemName AND [ItemDescription] = @original_ItemDescription AND (([ItemPrice] = @original_ItemPrice) OR ([ItemPrice] IS NULL AND @original_ItemPrice IS NULL))" InsertCommand="INSERT INTO [MenuItem] ([ItemID], [ItemName], [ItemDescription], [ItemPrice]) VALUES (@ItemID, @ItemName, @ItemDescription, @ItemPrice)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [MenuItem]" UpdateCommand="UPDATE [MenuItem] SET [ItemName] = @ItemName, [ItemDescription] = @ItemDescription, [ItemPrice] = @ItemPrice WHERE [ItemID] = @original_ItemID AND [ItemName] = @original_ItemName AND [ItemDescription] = @original_ItemDescription AND (([ItemPrice] = @original_ItemPrice) OR ([ItemPrice] IS NULL AND @original_ItemPrice IS NULL))">
         <DeleteParameters>
             <asp:Parameter Name="original_ItemID" Type="Int32" />
