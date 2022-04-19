@@ -3,47 +3,68 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Make your Resveration</title>
-    <link rel="stylesheet" href="Style.css" />
-</head>
-<body>
-    <nav>
-        <div class="wrapper">
+    <head runat="server">
+        <title>Make your Resveration</title>
+        <link rel="stylesheet" href="Style.css" />
+    </head>
+    
+    <body>
+        <nav>
             <ul>
                 <li>
-                    <a href="LoginPage.aspx">Login</a>
+                    <a href="OurValues.aspx">Our Values</a>
                 </li>
                 <li>
                     <a href="Staff.aspx">Our Team</a>
                 </li>
                 <li>
-                    <a href="OurValues.aspx">Our Values</a>
-                </li>
-                <li>
                     <a href="Resveration.aspx">Make a Resveration</a>
                 </li>
                 <li>
-                    <a href="MenuPage.aspx">Menu</a>
+                    <a href="LoginPage.aspx">Login</a>
                 </li>
-
-                <div class="logo">
-                    <a href="Default.html">
-                        <image class="navImg" style="height: 100px" ; src="Image/RestaurantLogo.png"></image>
-                    </a>
-                </div>
             </ul>
-        </div>
-    </nav>
-    <div class="wrapper">
-        <form id="form1" runat="server">
-            <div class="quotes">
-                <h2>This page will have an interactive GUI for tables, and it will somehow be connected to a calendar</h2>
-                
-                 <image style="height: 700px" ; src="Image/Room.jpg"></image>
-
+            <div>
+                <a href="Default.html">
+                    <image class="navImg" style="height: 100px" ; src="Image/RestaurantLogo.png"></image>
+                </a>
             </div>
-        </form>
-    </div>
-</body>
+        </nav>
+        
+        <div>
+            <form id="form1" runat="server">
+            <br />
+            <br />
+            <table class="centeredTable">
+                <tr>
+                    <td>
+                        <asp:Calendar ID="reservationCalendar" runat="server"></asp:Calendar>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:RadioButtonList ID="rblChooseTable" runat="server">
+                            <asp:ListItem Value="1">Reserve a Single Table.</asp:ListItem>
+                            <asp:ListItem Value="2">Reserve the Whole Room.</asp:ListItem>
+                        </asp:RadioButtonList>
+                    </td>
+                </tr>
+            </table>
+            
+            </form>
+        </div>
+
+        <br />
+        <br />
+        <br />
+
+        <div class="ReservationPageImg">
+            <image style="height: 900px" ; src="Image/Room.jpg"></image>
+        </div>
+    </body>
 </html>

@@ -313,3 +313,14 @@ nav {
     justify-content: center;
     text-align: center;
 }
+
+.ReservationPageImg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: contain;
+}
+
+.centeredTable {
+    justify-content: center;
+    margin: 0 auto;
+}
