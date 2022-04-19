@@ -65,7 +65,7 @@
                 <br />
                 <asp:Button ID="btnInsert" runat="server" OnClick="btnInsert_Click" Text="Insert MenuItem" />
                 <br />
-    <asp:Label ID="lblStatus" runat="server" EnableViewState="False"></asp:Label>
+                <asp:Label ID="lblStatus" runat="server" EnableViewState="False"></asp:Label>
                 <br />
             </form>
         </div>

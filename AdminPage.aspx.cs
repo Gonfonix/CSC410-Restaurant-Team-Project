@@ -67,8 +67,7 @@ namespace CSC_410_Team_Project_Restaurant
                 }
                 catch (Exception insertException)
                 {
-                    Exception innerException = insertException.InnerException;
-                    lblStatus.Text = "Insert failed: " + innerException.Message;
+                    lblStatus.Text = "Insert failed: " + insertException.InnerException.Message;
                 }
             }catch (FormatException formatException)
             {
