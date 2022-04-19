@@ -40,7 +40,7 @@
         <div class="quotes">
             <h2>The admin can change stuff on this page</h2>
             <form id="form1" runat="server">
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ItemID" DataSourceID="sdsAdmin">
+                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ItemID" DataSourceID="sdsAdmin" OnRowDeleted="GridView1_RowDeleted" OnRowUpdated="GridView1_RowUpdated">
                     <Columns>
                         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
                         <asp:BoundField DataField="ItemID" HeaderText="ItemID" ReadOnly="True" SortExpression="ItemID" />
@@ -49,6 +49,24 @@
                         <asp:BoundField DataField="ItemPrice" HeaderText="ItemPrice" SortExpression="ItemPrice" />
                     </Columns>
                 </asp:GridView>
+                <br />
+                <br />
+                <asp:TextBox ID="txtItemID" runat="server"></asp:TextBox>
+                <asp:Label ID="Label1" runat="server" Text="itemID"></asp:Label>
+                <br />
+                <asp:TextBox ID="txtItemName" runat="server" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
+                <asp:Label ID="Label2" runat="server" Text="itemName"></asp:Label>
+                <br />
+                <asp:TextBox ID="txtItemDescription" runat="server"></asp:TextBox>
+                <asp:Label ID="Label3" runat="server" Text="itemDescription"></asp:Label>
+                <br />
+                <asp:TextBox ID="txtItemPrice" runat="server"></asp:TextBox>
+                <asp:Label ID="Label4" runat="server" Text="itemPrice"></asp:Label>
+                <br />
+                <br />
+                <asp:Button ID="btnInsert" runat="server" OnClick="btnInsert_Click" Text="Insert MenuItem" />
+                <br />
+                <br />
             </form>
         </div>
     </div>

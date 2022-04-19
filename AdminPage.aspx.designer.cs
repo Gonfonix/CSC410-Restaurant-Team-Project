@@ -42,6 +42,15 @@ namespace CSC_410_Team_Project_Restaurant
         protected global::System.Web.UI.WebControls.TextBox txtItemID;
 
         /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
         /// txtItemName control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace CSC_410_Team_Project_Restaurant
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtItemName;
+
+        /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
         /// txtItemDescription control.
@@ -60,6 +78,15 @@ namespace CSC_410_Team_Project_Restaurant
         protected global::System.Web.UI.WebControls.TextBox txtItemDescription;
 
         /// <summary>
+        /// Label3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+
+        /// <summary>
         /// txtItemPrice control.
         /// </summary>
         /// <remarks>
@@ -67,6 +94,15 @@ namespace CSC_410_Team_Project_Restaurant
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtItemPrice;
+
+        /// <summary>
+        /// Label4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
         /// btnInsert control.
