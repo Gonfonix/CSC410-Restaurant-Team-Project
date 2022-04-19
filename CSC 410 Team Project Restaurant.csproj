@@ -81,6 +81,7 @@
     <Content Include="Image\Nathon.jpg" />
     <Content Include="Image\Nathon2.JPG" />
     <Content Include="Image\RestaurantLogo.png" />
+    <Content Include="Image\Room.jpg" />
     <Content Include="Image\TacoPalace.jpg" />
     <Content Include="LoginPage.aspx" />
     <Content Include="MenuPage.aspx" />

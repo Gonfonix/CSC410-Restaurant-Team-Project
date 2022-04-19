@@ -39,6 +39,9 @@
         <form id="form1" runat="server">
             <div class="quotes">
                 <h2>This page will have an interactive GUI for tables, and it will somehow be connected to a calendar</h2>
+                
+                 <image style="height: 700px" ; src="Image/Room.jpg"></image>
+
             </div>
         </form>
     </div>
