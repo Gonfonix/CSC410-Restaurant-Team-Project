@@ -39,5 +39,44 @@ namespace CSC_410_Team_Project_Restaurant
                 lblStatus.Text = "Delete failed. Someone else changed or deleted this student.";
             }
         }
+
+      
+        protected void btnInsert_Click(object sender, EventArgs e)
+        {
+
+            string itemName, itemDescription, itemID, itemPrice;
+            int isThisAnInteger;
+            itemName = txtItemName.Text;
+            itemDescription = txtItemDescription.Text;
+            itemID = txtItemID.Text;
+            itemPrice = txtItemPrice.Text;
+
+            try
+            {
+                isThisAnInteger = Convert.ToInt32(itemID);
+                isThisAnInteger = Convert.ToInt32(itemPrice);
+
+                try
+                {
+                    sdsAdmin.InsertParameters["ItemID"].DefaultValue = itemID;
+                    sdsAdmin.InsertParameters["ItemDescription"].DefaultValue = itemDescription;
+                    sdsAdmin.InsertParameters["ItemPrice"].DefaultValue = itemPrice;
+                    sdsAdmin.InsertParameters["ItemName"].DefaultValue = itemName;
+
+                    sdsAdmin.Insert();
+                }
+                catch (Exception insertException)
+                {
+                    Exception innerException = insertException.InnerException;
+                    lblStatus.Text = "Insert failed: " + innerException.Message;
+                }
+            }catch (FormatException formatException)
+            {
+                lblStatus.Text = "You must enter integer values for itemPrice and itemID";
+            }
+
+
+
+        }
     }
 }
