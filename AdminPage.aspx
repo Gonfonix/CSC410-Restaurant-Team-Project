@@ -54,7 +54,7 @@
                 <asp:TextBox ID="txtItemID" runat="server"></asp:TextBox>
                 <asp:Label ID="Label1" runat="server" Text="itemID"></asp:Label>
                 <br />
-                <asp:TextBox ID="txtItemName" runat="server" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="txtItemName" runat="server"></asp:TextBox>
                 <asp:Label ID="Label2" runat="server" Text="itemName"></asp:Label>
                 <br />
                 <asp:TextBox ID="txtItemDescription" runat="server"></asp:TextBox>
