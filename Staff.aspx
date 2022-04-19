@@ -53,7 +53,7 @@
                     <br />
                     <p class="staffQuotes">"I spent my whole life studying and preparing myself to be an ethical
                     hacker. But then I took a bite of the scrumptious netbeans taco. And from
-                    that moment on, I knew I wanted to work at Cindric’s Taco Palace."<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp - AJ Hammond</p>
+                    that moment on, I knew I wanted to work at Cindric’s Taco Palace."</p>
                 </td>
             </tr>
             <tr>
@@ -63,7 +63,7 @@
                  <td>
                     <h2 class="staffText"><u>Kyle Spencer: Sous Chef</u></h2>
                     <br />
-                    <p class="staffQuotes">"I want to be... where the tacos are"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp - Kyle Spencer</p>
+                    <p class="staffQuotes">"I want to be... where the tacos are"</p>
                  </td>
             </tr>
             <tr>
@@ -74,7 +74,7 @@
                      <h2 class="staffText"><u>Nathon Williams: Lead Bartender</u></h2>
                      <br />
                      <p class="staffQuotes">"After consuming many amazing and jucy tacos from Cindric's Taco Palace, I have inherited the ability to grow a mustache in an instant.
-                     Take your cursor over my picture to see!"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp - Nathon Williams</p>
+                     Take your cursor over my picture to see!"</p>
                   </td>
             </tr>
         </table>
