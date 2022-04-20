@@ -33,6 +33,15 @@ namespace CSC_410_Team_Project_Restaurant
         protected global::System.Web.UI.WebControls.Calendar reservationCalendar;
 
         /// <summary>
+        /// ddlTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTime;
+
+        /// <summary>
         /// rblChooseTable control.
         /// </summary>
         /// <remarks>

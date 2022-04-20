@@ -40,10 +40,13 @@
                     <td>
                         <asp:Calendar ID="reservationCalendar" runat="server"></asp:Calendar>
                     </td>
+                    <td>
+                        <asp:DropDownList ID="ddlTime" runat="server"></asp:DropDownList>
+                    </td>
                 </tr>
                 <tr>
                     <td>
-                        <br />
+                        
                     </td>
                 </tr>
                 <tr>

@@ -40,7 +40,7 @@
         <br />
         <br />
         
-        <form id="form2" runat="server">
+        <form id="form1" runat="server">
             
             <div class="adminGrid">
                 <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ItemID" DataSourceID="sdsAdmin" OnRowDeleted="GridView1_RowDeleted" OnRowUpdated="GridView1_RowUpdated" BackColor="White" BorderColor="Black" BorderStyle="Solid" BorderWidth="2px" Font-Names="Arial">
