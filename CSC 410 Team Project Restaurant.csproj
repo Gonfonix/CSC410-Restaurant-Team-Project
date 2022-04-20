@@ -71,8 +71,6 @@
     <Content Include="CreateLoginPage.aspx" />
     <Content Include="Default.html" />
     <Content Include="Image\ChefAJ.jpg" />
-    <Content Include="Image\Cows.jpg" />
-    <Content Include="Image\giphy.gif" />
     <Content Include="Image\GreenTable.jpg" />
     <Content Include="Image\HappyCustomer.jpg" />
     <Content Include="Image\JucyTaco.jpg" />
