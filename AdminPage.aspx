@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Cindric's Taco Palace - Admin Page</title>
     <link rel="stylesheet" href="Style.css" />
 </head>
 <body>
@@ -33,44 +33,113 @@
                 </a>
             </div>
         </nav>
-
-
-    <div class="wrapper">
-        <div class="quotes">
-            <h2>The admin can change stuff on this page</h2>
-            <form id="form1" runat="server">
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ItemID" DataSourceID="sdsAdmin" OnRowDeleted="GridView1_RowDeleted" OnRowUpdated="GridView1_RowUpdated">
+        
+        <br />
+        <br />
+        <h1 class="centeredText">Welcome Cindric</h1>
+        <br />
+        <br />
+        
+        <form id="form2" runat="server">
+            
+            <div class="adminGrid">
+                <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ItemID" DataSourceID="sdsAdmin" OnRowDeleted="GridView1_RowDeleted" OnRowUpdated="GridView1_RowUpdated" BackColor="White" BorderColor="Black" BorderStyle="Solid" BorderWidth="2px" Font-Names="Arial">
                     <Columns>
-                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
-                        <asp:BoundField DataField="ItemID" HeaderText="ItemID" ReadOnly="True" SortExpression="ItemID" />
-                        <asp:BoundField DataField="ItemName" HeaderText="ItemName" SortExpression="ItemName" />
-                        <asp:BoundField DataField="ItemDescription" HeaderText="ItemDescription" SortExpression="ItemDescription" />
-                        <asp:BoundField DataField="ItemPrice" HeaderText="ItemPrice" SortExpression="ItemPrice" />
+                        <asp:CommandField ShowEditButton="True" ButtonType="Button" DeleteText=" Delete " EditText="  Edit  " ShowCancelButton="False" >
+                        <ControlStyle BackColor="White" Font-Bold="True" Font-Names="Arial" ForeColor="Black" />
+                        </asp:CommandField>
+                        <asp:BoundField DataField="ItemID" HeaderText="ID" ReadOnly="True" SortExpression="ItemID" />
+                        <asp:BoundField DataField="ItemName" HeaderText="Name" SortExpression="ItemName" />
+                        <asp:BoundField DataField="ItemDescription" HeaderText="Description" SortExpression="ItemDescription" />
+                        <asp:BoundField DataField="ItemPrice" HeaderText="Price" SortExpression="ItemPrice" />
+                        <asp:CommandField ButtonType="Button" DeleteText=" Delete " ShowDeleteButton="True">
+                        <ControlStyle BackColor="White" Font-Bold="True" Font-Names="Arial" ForeColor="Black" />
+                        </asp:CommandField>
                     </Columns>
+                    <EditRowStyle BackColor="#CCCCFF" />
+                    <HeaderStyle BackColor="#FFCC00" Font-Italic="True" ForeColor="Black" />
                 </asp:GridView>
+            </div>
                 <br />
                 <br />
-                <asp:TextBox ID="txtItemID" runat="server"></asp:TextBox>
-                <asp:Label ID="Label1" runat="server" Text="itemID"></asp:Label>
+        
+            <div class="loginWrapper">
                 <br />
-                <asp:TextBox ID="txtItemName" runat="server"></asp:TextBox>
-                <asp:Label ID="Label2" runat="server" Text="itemName"></asp:Label>
+
+                <h2 class="centeredTextNoHover">Enter a New Menu Item?</h2>
                 <br />
-                <asp:TextBox ID="txtItemDescription" runat="server"></asp:TextBox>
-                <asp:Label ID="Label3" runat="server" Text="itemDescription"></asp:Label>
+
+                <table>
+                    <tr>
+                        <td>
+                            <asp:Label ID="lblItemID" runat="server" Text="ID: "></asp:Label>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtItemID" runat="server" Height="18px" Width="150px"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br />
+                        </td>
+                        <td>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="lblItemName" runat="server" Text="Name: "></asp:Label>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtItemName" runat="server" Height="18px" Width="150px"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br />
+                        </td>
+                        <td>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="lblItemDescription" runat="server" Text="Description: "></asp:Label>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtItemDescription" runat="server" Height="18px" Width="300px"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br />
+                        </td>
+                        <td>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="lblItemPrice" runat="server" Text="Price: "></asp:Label>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtItemPrice" runat="server" Height="18px" Width="150px"></asp:TextBox>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="centerLogin-label-btn">
+                    <asp:Label ID="lblStatus" runat="server" EnableViewState="False" Font-Bold="True" ForeColor="Red"></asp:Label>
+                    <br />
+                    <asp:Button ID="btnInsert" runat="server" OnClick="btnInsert_Click" Text="Insert Menu Item" Width="200px" BackColor="White" Font-Names="Arial" ForeColor="Black" Height="32px" />
+                </div>
                 <br />
-                <asp:TextBox ID="txtItemPrice" runat="server"></asp:TextBox>
-                <asp:Label ID="Label4" runat="server" Text="itemPrice"></asp:Label>
-                <br />
-                <br />
-                <asp:Button ID="btnInsert" runat="server" OnClick="btnInsert_Click" Text="Insert MenuItem" />
-                <br />
-                <asp:Label ID="lblStatus" runat="server" EnableViewState="False"></asp:Label>
-                <br />
-            </form>
-        </div>
-    </div>
-    <asp:SqlDataSource ID="sdsAdmin" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" DeleteCommand="DELETE FROM [MenuItem] WHERE [ItemID] = @original_ItemID AND [ItemName] = @original_ItemName AND [ItemDescription] = @original_ItemDescription AND (([ItemPrice] = @original_ItemPrice) OR ([ItemPrice] IS NULL AND @original_ItemPrice IS NULL))" InsertCommand="INSERT INTO [MenuItem] ([ItemID], [ItemName], [ItemDescription], [ItemPrice]) VALUES (@ItemID, @ItemName, @ItemDescription, @ItemPrice)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [MenuItem]" UpdateCommand="UPDATE [MenuItem] SET [ItemName] = @ItemName, [ItemDescription] = @ItemDescription, [ItemPrice] = @ItemPrice WHERE [ItemID] = @original_ItemID AND [ItemName] = @original_ItemName AND [ItemDescription] = @original_ItemDescription AND (([ItemPrice] = @original_ItemPrice) OR ([ItemPrice] IS NULL AND @original_ItemPrice IS NULL))">
+            </div>
+            <br />
+            <br />
+        </form>
+
+        <asp:SqlDataSource ID="sdsAdmin" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" DeleteCommand="DELETE FROM [MenuItem] WHERE [ItemID] = @original_ItemID AND [ItemName] = @original_ItemName AND [ItemDescription] = @original_ItemDescription AND (([ItemPrice] = @original_ItemPrice) OR ([ItemPrice] IS NULL AND @original_ItemPrice IS NULL))" InsertCommand="INSERT INTO [MenuItem] ([ItemID], [ItemName], [ItemDescription], [ItemPrice]) VALUES (@ItemID, @ItemName, @ItemDescription, @ItemPrice)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [MenuItem]" UpdateCommand="UPDATE [MenuItem] SET [ItemName] = @ItemName, [ItemDescription] = @ItemDescription, [ItemPrice] = @ItemPrice WHERE [ItemID] = @original_ItemID AND [ItemName] = @original_ItemName AND [ItemDescription] = @original_ItemDescription AND (([ItemPrice] = @original_ItemPrice) OR ([ItemPrice] IS NULL AND @original_ItemPrice IS NULL))">
         <DeleteParameters>
             <asp:Parameter Name="original_ItemID" Type="Int32" />
             <asp:Parameter Name="original_ItemName" Type="String" />
@@ -92,6 +161,6 @@
             <asp:Parameter Name="original_ItemDescription" Type="String" />
             <asp:Parameter Name="original_ItemPrice" Type="Decimal" />
         </UpdateParameters>
-    </asp:SqlDataSource>
+        </asp:SqlDataSource>
     </body>
 </html>

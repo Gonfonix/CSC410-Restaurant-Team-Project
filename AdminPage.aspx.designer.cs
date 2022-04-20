@@ -15,13 +15,13 @@ namespace CSC_410_Team_Project_Restaurant
     {
 
         /// <summary>
-        /// form1 control.
+        /// form2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
 
         /// <summary>
         /// GridView1 control.
@@ -33,6 +33,15 @@ namespace CSC_410_Team_Project_Restaurant
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
+        /// lblItemID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblItemID;
+
+        /// <summary>
         /// txtItemID control.
         /// </summary>
         /// <remarks>
@@ -42,13 +51,13 @@ namespace CSC_410_Team_Project_Restaurant
         protected global::System.Web.UI.WebControls.TextBox txtItemID;
 
         /// <summary>
-        /// Label1 control.
+        /// lblItemName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblItemName;
 
         /// <summary>
         /// txtItemName control.
@@ -60,13 +69,13 @@ namespace CSC_410_Team_Project_Restaurant
         protected global::System.Web.UI.WebControls.TextBox txtItemName;
 
         /// <summary>
-        /// Label2 control.
+        /// lblItemDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lblItemDescription;
 
         /// <summary>
         /// txtItemDescription control.
@@ -78,13 +87,13 @@ namespace CSC_410_Team_Project_Restaurant
         protected global::System.Web.UI.WebControls.TextBox txtItemDescription;
 
         /// <summary>
-        /// Label3 control.
+        /// lblItemPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label lblItemPrice;
 
         /// <summary>
         /// txtItemPrice control.
@@ -96,13 +105,13 @@ namespace CSC_410_Team_Project_Restaurant
         protected global::System.Web.UI.WebControls.TextBox txtItemPrice;
 
         /// <summary>
-        /// Label4 control.
+        /// lblStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label lblStatus;
 
         /// <summary>
         /// btnInsert control.
@@ -112,15 +121,6 @@ namespace CSC_410_Team_Project_Restaurant
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnInsert;
-
-        /// <summary>
-        /// lblStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatus;
 
         /// <summary>
         /// sdsAdmin control.

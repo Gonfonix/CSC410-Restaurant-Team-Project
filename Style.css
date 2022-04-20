@@ -324,3 +324,12 @@ nav {
     justify-content: center;
     margin: 0 auto;
 }
+
+.adminGrid {
+    display: grid;
+    justify-content: center;
+}
+
+    .adminGrid td {
+        padding: 10px;
+    }
