@@ -12,6 +12,11 @@ namespace CSC_410_Team_Project_Restaurant
 {
     public partial class ForgotPassword : System.Web.UI.Page
     {
+        private DataView dView;
+        private DataRowView dRowView;
+        string userType;
+        string userName;
+        string password;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -25,9 +30,9 @@ namespace CSC_410_Team_Project_Restaurant
         {
             if (txtUsername.Text.Length > 0 && txtPassword.Text.Length > 0)
             {
-                sdsLogin.SelectCommand = "UPDATE Customer SET Password = " + txtPassword.Text + "WHERE Username = " + txtUsername.Text;
+                sdsForgotPassword.SelectCommand = "UPDATE Customer SET Password = " + txtPassword.Text + "WHERE Username = " + txtUsername.Text;
                 //sdsLogin.DataBind();
-                dView = (DataView)sdsLogin.Select(DataSourceSelectArguments.Empty);
+                dView = (DataView)sdsForgotPassword.Select(DataSourceSelectArguments.Empty);
                 if (dView.Count > 0)
                 {
                     dRowView = dView[0];
