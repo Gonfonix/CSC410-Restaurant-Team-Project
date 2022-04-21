@@ -30,9 +30,7 @@ namespace CSC_410_Team_Project_Restaurant
         {
             if (txtUsername.Text.Length > 0 && txtPassword.Text.Length > 0)
             {
-                /////////
                 sdsForgotPassword.SelectCommand = "SELECT CustomerID, UserName, Password FROM Customer WHERE UserName = '" + txtUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS UNION SELECT CAST(EmployeeID AS varchar), UserName, Password FROM Employee WHERE UserName = '" + txtUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS";
-                //sdsLogin.DataBind();
                 dView = (DataView)sdsForgotPassword.Select(DataSourceSelectArguments.Empty);
                 if (dView.Count > 0)
                 {
