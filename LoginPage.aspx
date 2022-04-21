@@ -21,7 +21,7 @@
                     <a href="Staff.aspx">Our Team</a>
                 </li>
                 <li>
-                    <a href="Resveration.aspx">Make a Resveration</a>
+                    <a href="Resveration.aspx">Make a Reservation</a>
                 </li>
             </ul>
             
