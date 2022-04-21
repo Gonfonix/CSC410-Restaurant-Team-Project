@@ -14,7 +14,7 @@
             <asp:TextBox ID="txtUsername" runat="server" style="margin-bottom: 0px"></asp:TextBox>
             <asp:Label ID="Label2" runat="server" Text="Username"></asp:Label>
             <br />
-            <asp:TextBox ID="txtPassword" runat="server" style="margin-bottom: 0px"></asp:TextBox>
+            <asp:TextBox ID="txtPassword" runat="server" style="margin-bottom: 0px" TextMode="Password"></asp:TextBox>
             <asp:Label ID="Label1" runat="server" Text="New Password"></asp:Label>
         </div>
         <asp:Label ID="lblStatus" runat="server" EnableViewState="False" Font-Bold="True" ForeColor="Red"></asp:Label>
