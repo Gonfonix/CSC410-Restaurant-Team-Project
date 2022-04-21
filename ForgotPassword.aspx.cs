@@ -21,10 +21,9 @@ namespace CSC_410_Team_Project_Restaurant
         {
             return ConfigurationManager.ConnectionStrings["RestaurantConnectionString"].ConnectionString;
         }
-        protected System.Void btnSubmit_Click(System.Object sender, System.EventArgs e)
+        protected void btnSubmit_Click(object sender, EventArgs e)
         {
-
-            if (txtUserName.Text.Length > 0 && txtPassword.Text.Length > 0)
+            if (txtUsername.Text.Length > 0 && txtPassword.Text.Length > 0)
             {
                 sdsLogin.SelectCommand = "UPDATE Customer SET Password = " + txtPassword.Text + "WHERE Username = " + txtUsername.Text;
                 //sdsLogin.DataBind();
