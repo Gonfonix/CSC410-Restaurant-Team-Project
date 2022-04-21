@@ -53,7 +53,7 @@
                     <div class="view view2 view-first">
                         <div class="mask">
                             <h2>The Best Beef</h2>
-                            <p>At Cindric's Taco Palace we beleive that happy cows mean happy customers. In response to this, our employees spend at least one hour a day at the local cow fields playing with the cows!</p>
+                            <p>At Cindric's Taco Palace we believe that happy cows mean happy customers. In response to this, our employees spend at least one hour a day at the local cow fields playing with the cows!</p>
                         </div>
                     </div>
                 </td>
