@@ -64,7 +64,8 @@ namespace CSC_410_Team_Project_Restaurant
                     }
                     else if (userType == "Customer")
                     {
-                        Response.Redirect("Reservation.aspx");
+                        //Response.Redirect("Reservation.aspx");
+                        Response.Redirect("Resveration.aspx");
                     }
                 }
                 else
