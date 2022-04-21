@@ -15,8 +15,6 @@ namespace CSC_410_Team_Project_Restaurant
         private DataView dView;
         private DataRowView dRowView;
         string userType;
-        string userName;
-        string password;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -36,10 +34,6 @@ namespace CSC_410_Team_Project_Restaurant
                 {
                     dRowView = dView[0];
 
-                    userName = (string)dRowView["UserName"];
-
-                    password = (string)dRowView["Password"];
-
                     /* 
                      * If "CustomerID" is an int, then it's a Employee. If it is an email (varchar/string), then it is a Customer.
                      * 
@@ -56,20 +50,17 @@ namespace CSC_410_Team_Project_Restaurant
                         userType = "Customer";
                     }
 
-                    Session["UserName"] = userName;
-
-                    Session["Password"] = password;
-
                     //if userType = Employee, go to admin page. Else, go to regular page.
 
                     if (userType == "Employee")
                     {
                         sdsForgotPassword.UpdateCommand = "UPDATE Employee SET Password = '" + txtPassword.Text + "' WHERE UserName = '" + txtUsername.Text + "'";
-                        //sdsLogin.DataBind();
                         dView = (DataView)sdsForgotPassword.Select(DataSourceSelectArguments.Empty);
                         if (dView.Count > 0)
                         {
                             Response.Write("Updated Password for Employee");
+                            Session["UserName"] = txtUsername.Text;
+                            Session["Password"] = txtPassword.Text;
 
                         }
 
@@ -77,12 +68,12 @@ namespace CSC_410_Team_Project_Restaurant
                     else if (userType == "Customer")
                     {
                         sdsForgotPassword.UpdateCommand = "UPDATE Customer SET Password = '" + txtPassword.Text + "' WHERE UserName = '" + txtUsername.Text + "'";
-                        //sdsLogin.DataBind();
                         dView = (DataView)sdsForgotPassword.Select(DataSourceSelectArguments.Empty);
                         if (dView.Count > 0)
                         {
                             Response.Write("Updated Password for Customer");
-
+                            Session["UserName"] = txtUsername.Text;
+                            Session["Password"] = txtPassword.Text;
                         }
                     }
                 }
