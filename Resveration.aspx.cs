@@ -11,7 +11,7 @@ namespace CSC_410_Team_Project_Restaurant
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) { 
+            /*if (!IsPostBack) { 
             ddlTime.Items.Add(new ListItem("Choose A Time: ", "0"));
             ddlTime.Items.Add(new ListItem("9:00 AM - 10:00 AM", "1"));
             ddlTime.Items.Add(new ListItem("10:00 AM - 11:00 AM", "2"));
@@ -25,7 +25,7 @@ namespace CSC_410_Team_Project_Restaurant
             ddlTime.Items.Add(new ListItem("6:00 PM - 7:00 PM", "10"));
             ddlTime.Items.Add(new ListItem("7:00 PM - 8:00 PM", "11"));
             ddlTime.Items.Add(new ListItem("8:00 PM - 9:00 PM", "12"));
-            }
+            }*/
         }
     }
 }
