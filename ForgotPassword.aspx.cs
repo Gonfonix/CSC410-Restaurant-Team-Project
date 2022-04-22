@@ -55,8 +55,7 @@ namespace CSC_410_Team_Project_Restaurant
                     if (userType == "Employee")
                     {
                         sdsForgotPassword.UpdateCommand = "UPDATE Employee SET Password = '" + txtPassword.Text + "' WHERE UserName = '" + txtUsername.Text + "'";
-                        dView = (DataView)sdsForgotPassword.Select(DataSourceSelectArguments.Empty);
-                        if (dView.Count > 0)
+                        if (sdsForgotPassword.Update() > 0)
                         {
                             Response.Write("Updated Password for Employee");
                             Session["UserName"] = txtUsername.Text;
@@ -68,8 +67,7 @@ namespace CSC_410_Team_Project_Restaurant
                     else if (userType == "Customer")
                     {
                         sdsForgotPassword.UpdateCommand = "UPDATE Customer SET Password = '" + txtPassword.Text + "' WHERE UserName = '" + txtUsername.Text + "'";
-                        dView = (DataView)sdsForgotPassword.Select(DataSourceSelectArguments.Empty);
-                        if (dView.Count > 0)
+                        if (sdsForgotPassword.Update() > 0)
                         {
                             Response.Write("Updated Password for Customer");
                             Session["UserName"] = txtUsername.Text;
