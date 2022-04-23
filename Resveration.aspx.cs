@@ -11,6 +11,10 @@ namespace CSC_410_Team_Project_Restaurant
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserName"] == null && Session["Password"] == null)
+            {
+                Response.Redirect("LoginPage.aspx");
+            }
             /*if (!IsPostBack) { 
             ddlTime.Items.Add(new ListItem("Choose A Time: ", "0"));
             ddlTime.Items.Add(new ListItem("9:00 AM - 10:00 AM", "1"));
