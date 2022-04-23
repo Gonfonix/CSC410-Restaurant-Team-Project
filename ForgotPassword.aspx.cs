@@ -26,9 +26,9 @@ namespace CSC_410_Team_Project_Restaurant
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text.Length > 0 && txtPassword.Text.Length > 0)
+            if (txtUserName.Text.Length > 0 && txtPassword.Text.Length > 0)
             {
-                sdsForgotPassword.SelectCommand = "SELECT CustomerID, UserName, Password FROM Customer WHERE UserName = '" + txtUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS UNION SELECT CAST(EmployeeID AS varchar), UserName, Password FROM Employee WHERE UserName = '" + txtUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS";
+                sdsForgotPassword.SelectCommand = "SELECT CustomerID, UserName, Password FROM Customer WHERE UserName = '" + txtUserName.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS UNION SELECT CAST(EmployeeID AS varchar), UserName, Password FROM Employee WHERE UserName = '" + txtUserName.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS";
                 dView = (DataView)sdsForgotPassword.Select(DataSourceSelectArguments.Empty);
                 if (dView.Count > 0)
                 {
@@ -54,11 +54,11 @@ namespace CSC_410_Team_Project_Restaurant
 
                     if (userType == "Employee")
                     {
-                        sdsForgotPassword.UpdateCommand = "UPDATE Employee SET Password = '" + txtPassword.Text + "' WHERE UserName = '" + txtUsername.Text + "'";
+                        sdsForgotPassword.UpdateCommand = "UPDATE Employee SET Password = '" + txtPassword.Text + "' WHERE UserName = '" + txtUserName.Text + "'";
                         if (sdsForgotPassword.Update() > 0)
                         {
                             Response.Write("Updated Password for Employee");
-                            Session["UserName"] = txtUsername.Text;
+                            Session["UserName"] = txtUserName.Text;
                             Session["Password"] = txtPassword.Text;
 
                         }
@@ -66,11 +66,11 @@ namespace CSC_410_Team_Project_Restaurant
                     }
                     else if (userType == "Customer")
                     {
-                        sdsForgotPassword.UpdateCommand = "UPDATE Customer SET Password = '" + txtPassword.Text + "' WHERE UserName = '" + txtUsername.Text + "'";
+                        sdsForgotPassword.UpdateCommand = "UPDATE Customer SET Password = '" + txtPassword.Text + "' WHERE UserName = '" + txtUserName.Text + "'";
                         if (sdsForgotPassword.Update() > 0)
                         {
                             Response.Write("Updated Password for Customer");
-                            Session["UserName"] = txtUsername.Text;
+                            Session["UserName"] = txtUserName.Text;
                             Session["Password"] = txtPassword.Text;
                         }
                     }

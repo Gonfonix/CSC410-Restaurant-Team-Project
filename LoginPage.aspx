@@ -39,8 +39,8 @@
         
         <br />
         <br />
-        <h1 class="centeredText">Please Login to Make a Reservation: </h1>
-        <br />
+            <h1 class="centeredText">Please Login to Make a Reservation: </h1>
+            <br />
         
             <form id="form1" runat="server">
             
@@ -80,7 +80,11 @@
             
             <br />    
                 <p class="centeredTextNoHover">
-                <a href="CreateLoginPage.aspx">Create a new login</a>
+                    <a href="CreateLoginPage.aspx">Create a new login</a>
+                </p>
+            <br />
+                <p class="centeredTextNoHover">
+                    <a href="ForgotPassword.aspx">Forgot your password?</a>
                 </p>
             <br />
             <br />
