@@ -189,6 +189,8 @@
                             RestaurantClosed.style.pointerEvents = "none";
                             RestaurantClosedText.style.pointerEvents = "none";
                             RestaurantClosedTextBackground.style.pointerEvents = "none";
+
+                            //reserveTableButton.disabled = false;
                         }
 
                         for (let i = 0; i < tablesReserved.length; i++) {
@@ -330,6 +332,8 @@
                             RestaurantClosed.style.pointerEvents = "auto";
                             RestaurantClosedText.style.pointerEvents = "auto";
                             RestaurantClosedTextBackground.style.pointerEvents = "auto";
+
+                            //reserveTableButton.disabled = true;
                         }
                     }
 
@@ -452,11 +456,10 @@
             </form>
         </div>
 
-
 	<!-- copy these lines to your document: -->
 
 	<div id="default_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:100%;height:100%;overflow:hidden;">
-		<script type="text/javascript" charset="utf-8" src="Default.hyperesources/default_hype_generated_script.js?60295"></script>
+		<script type="text/javascript" charset="utf-8" src="Default.hyperesources/default_hype_generated_script.js?88591"></script>
 	</div>
 
 	<!-- end copy -->
@@ -482,8 +485,8 @@ RESERVATIONS ARE CLOSED FOR THE SELECTED DATE AND TIME!
 NOT Reservable</div>
 		<div>Reserved Table: None
 </div>
-		<div>Table 1</div>
 		<div>Table 3</div>
+		<div>Table 1</div>
 		<div>
 
   Entrance</div>
