@@ -132,8 +132,9 @@
                     let foundTableReservedBySelf = false; // can be removed.
                     let currentTimeAndDateTableReserveStatus = [false, false, false, false];
 
-                    let previousTableIDReserved = tableIDReserved;
+                    let previousTableIDReserved = 0;
                     if (tableIDReserved !== 0) {
+                        previousTableIDReserved = tableIDReserved;
                         tableHasBeenReserved = false;
                         tableDateAndTimeReserved = "";
                         reserveTableButton.innerHTML = "Reserve Table";
@@ -461,7 +462,7 @@
 	<!-- copy these lines to your document: -->
 
 	<div id="default_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:100%;height:100%;overflow:hidden;">
-		<script type="text/javascript" charset="utf-8" src="Default.hyperesources/default_hype_generated_script.js?48774"></script>
+		<script type="text/javascript" charset="utf-8" src="Default.hyperesources/default_hype_generated_script.js?98334"></script>
 	</div>
 
 	<!-- end copy -->
