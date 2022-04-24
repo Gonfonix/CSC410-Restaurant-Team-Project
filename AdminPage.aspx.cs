@@ -9,6 +9,8 @@ namespace CSC_410_Team_Project_Restaurant
 {
     public partial class AdminPage : System.Web.UI.Page
     {
+        string itemName, itemDescription, itemID, itemPrice;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UserName"] == null && Session["Password"] == null)
@@ -46,40 +48,49 @@ namespace CSC_410_Team_Project_Restaurant
       
         protected void btnInsert_Click(object sender, EventArgs e)
         {
-
-            string itemName, itemDescription, itemID, itemPrice;
             int isThisAnInteger;
-            itemName = txtItemName.Text;
-            itemDescription = txtItemDescription.Text;
+
             itemID = txtItemID.Text;
+            itemName = txtItemName.Text;
+            itemDescription = txtItemDescription.Text;           
             itemPrice = txtItemPrice.Text;
 
-            try
+            if(itemID.Length > 0 && itemName.Length > 0 && itemDescription.Length > 0 && itemPrice.Length > 0)
             {
-                isThisAnInteger = Convert.ToInt32(itemID);
-                isThisAnInteger = Convert.ToInt32(itemPrice);
-
+                sdsAdmin.InsertParameters["ItemID"].DefaultValue = itemID;
+                sdsAdmin.InsertParameters["ItemDescription"].DefaultValue = itemDescription;
+                sdsAdmin.InsertParameters["ItemPrice"].DefaultValue = itemPrice;
+                sdsAdmin.InsertParameters["ItemName"].DefaultValue = itemName;
+                
                 try
                 {
-                    sdsAdmin.InsertParameters["ItemID"].DefaultValue = itemID;
-                    sdsAdmin.InsertParameters["ItemDescription"].DefaultValue = itemDescription;
-                    sdsAdmin.InsertParameters["ItemPrice"].DefaultValue = itemPrice;
-                    sdsAdmin.InsertParameters["ItemName"].DefaultValue = itemName;
+                    isThisAnInteger = Convert.ToInt32(itemID);
+                    isThisAnInteger = Convert.ToInt32(itemPrice);
 
-                    sdsAdmin.Insert();
+                    try
+                    {
+                        sdsAdmin.Insert();
+
+                        lblStatus.Text = itemName + " was added successfully.";
+                        txtItemID.Text = "";
+                        txtItemName.Text = "";
+                        txtItemDescription.Text = "";
+                        txtItemPrice.Text = "";
+                    }
+                    catch (Exception ie)
+                    {
+                        lblStatus.Text = "Insert failed: Duplicate ItemID " + itemID + ".";
+                    }
                 }
-                catch (Exception insertException)
+                catch (FormatException fe)
                 {
-                    lblStatus.Text = "Insert failed: " + insertException.InnerException.Message;
+                    lblStatus.Text = "You must enter integer values for ID and Price";
                 }
             }
-            catch (FormatException fe)
+            else
             {
-                lblStatus.Text = "You must enter integer values for ID and Price";
+                lblStatus.Text = "Please enter information in every box.";
             }
-
-
-
         }
     }
 }
