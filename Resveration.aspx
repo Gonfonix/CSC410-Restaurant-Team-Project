@@ -73,7 +73,7 @@
                     }
 
                     // Setup the reservation screen based on gathered data.
-                    hypeDocument.dateAndTimeSelected(null);
+                    hypeDocument.dateAndTimeSelected(null, false);
                 } catch (e) {
                     statusLabel2.style.pointerEvents = "auto";
                     statusLabel2.innerHTML = "An error occurred when loading reservations.";
@@ -86,35 +86,35 @@
             /*
                * The Function Called When a Date and Time is Selected. Also, is Called on Document Load to Build the Reservation Screen.
             */
-            hypeDocument.dateAndTimeSelected = function (event) {
+            hypeDocument.dateAndTimeSelected = function (event, calledFromConfirmReservation) {
                 // ID of Date and Time Selector Element: reserveDateAndTime.
 
                 try {
                     let today = new Date();
                     let dateAndTimeSelectedFromSelector = new Date(reserveDateAndTime.value);
 
+                    let dd = today.getDate();
+                    let mm = today.getMonth() + 1;
+                    let yyyy = today.getFullYear();
+                    let hours = today.getHours();
+                    let minutes = today.getMinutes();
+                    let seconds = today.getSeconds();
 
+                    if (dd < 10) {
+                        dd = '0' + dd
+                    }
+
+                    if (mm < 10) {
+                        mm = '0' + mm
+                    }
+
+                    let todayWithoutTime = yyyy + '-' + mm + '-' + dd;
+                    let todayWithTime = yyyy + '-' + mm + '-' + dd + "T" + hours + ":" + minutes;
+
+                    today = new Date(todayWithTime);
 
                     // If the date and time selected is invalid, auto correct...
                     if (today > dateAndTimeSelectedFromSelector) {
-                        let dd = today.getDate();
-                        let mm = today.getMonth() + 1;
-                        let yyyy = today.getFullYear();
-                        let hours = today.getHours();
-                        let minutes = today.getMinutes();
-                        let seconds = today.getSeconds();
-
-                        if (dd < 10) {
-                            dd = '0' + dd
-                        }
-
-                        if (mm < 10) {
-                            mm = '0' + mm
-                        }
-
-                        let todayWithoutTime = yyyy + '-' + mm + '-' + dd;
-                        let todayWithTime = yyyy + '-' + mm + '-' + dd + "T" + hours + ":" + minutes;
-
                         if (event !== null) {
                             statusLabel.style.pointerEvents = "auto";
                             statusLabel.style.color = "red";
@@ -123,8 +123,10 @@
 
                         reserveDateAndTime.value = todayWithTime;
                     } else {
-                        statusLabel.style.pointerEvents = "none";
-                        statusLabel.style.opacity = 0.0;
+                        if (!calledFromConfirmReservation) {
+                            statusLabel.style.pointerEvents = "none";
+                            statusLabel.style.opacity = 0.0;
+                        }
                     }
 
                     let foundTableReservedBySelf = false; // can be removed.
@@ -164,9 +166,9 @@
 
                     dateAndTimeSelectedFromSelector = new Date(reserveDateAndTime.value);
 
-                    let dd = dateAndTimeSelectedFromSelector.getDate();
-                    let mm = dateAndTimeSelectedFromSelector.getMonth() + 1;
-                    let yyyy = dateAndTimeSelectedFromSelector.getFullYear();
+                    dd = dateAndTimeSelectedFromSelector.getDate();
+                    mm = dateAndTimeSelectedFromSelector.getMonth() + 1;
+                    yyyy = dateAndTimeSelectedFromSelector.getFullYear();
 
                     if (dd < 10) {
                         dd = '0' + dd
@@ -190,7 +192,7 @@
                             RestaurantClosedText.style.pointerEvents = "none";
                             RestaurantClosedTextBackground.style.pointerEvents = "none";
 
-                            //reserveTableButton.disabled = false;
+                            reserveTableButton.style.pointerEvents = "auto";
                         }
 
                         for (let i = 0; i < tablesReserved.length; i++) {
@@ -333,7 +335,7 @@
                             RestaurantClosedText.style.pointerEvents = "auto";
                             RestaurantClosedTextBackground.style.pointerEvents = "auto";
 
-                            //reserveTableButton.disabled = true;
+                            reserveTableButton.style.pointerEvents = "none";
                         }
                     }
 
@@ -459,7 +461,7 @@
 	<!-- copy these lines to your document: -->
 
 	<div id="default_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:100%;height:100%;overflow:hidden;">
-		<script type="text/javascript" charset="utf-8" src="Default.hyperesources/default_hype_generated_script.js?88591"></script>
+		<script type="text/javascript" charset="utf-8" src="Default.hyperesources/default_hype_generated_script.js?48774"></script>
 	</div>
 
 	<!-- end copy -->
@@ -528,6 +530,7 @@ RESERVED
 
 
 
+
 Then, click on a table to
 reserve it. Lastly, click on the “Reserve Table” button below.
 
@@ -537,7 +540,7 @@ Reserving a new table automatically unreserves any others.
 </div>
 		<div>Error: Table Reserved Already
 </div>
-		<div>Error: Invalid Date or Time
+		<div>Error: Invalid Date or Time. Fixed it!
 </div>
 		<div>
 RESERVED</div>
