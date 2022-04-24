@@ -192,9 +192,9 @@
                             RestaurantClosed.style.pointerEvents = "none";
                             RestaurantClosedText.style.pointerEvents = "none";
                             RestaurantClosedTextBackground.style.pointerEvents = "none";
-
-                            reserveTableButton.style.pointerEvents = "auto";
                         }
+
+                        reserveTableButton.style.pointerEvents = "auto";
 
                         for (let i = 0; i < tablesReserved.length; i++) {
                             // If the current date and time matches the current reservation, continue.
@@ -335,9 +335,9 @@
                             RestaurantClosed.style.pointerEvents = "auto";
                             RestaurantClosedText.style.pointerEvents = "auto";
                             RestaurantClosedTextBackground.style.pointerEvents = "auto";
-
-                            reserveTableButton.style.pointerEvents = "none";
                         }
+
+                        reserveTableButton.style.pointerEvents = "none";
                     }
 
                     if (tableIDReserved !== previousTableIDReserved && previousTableIDReserved !== 0) {
@@ -462,7 +462,7 @@
 	<!-- copy these lines to your document: -->
 
 	<div id="default_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:100%;height:100%;overflow:hidden;">
-		<script type="text/javascript" charset="utf-8" src="Default.hyperesources/default_hype_generated_script.js?98334"></script>
+		<script type="text/javascript" charset="utf-8" src="Default.hyperesources/default_hype_generated_script.js?34597"></script>
 	</div>
 
 	<!-- end copy -->
