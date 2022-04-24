@@ -218,7 +218,7 @@
                                         Table1Text.style.opacity = 0.0;
 
                                         if (isTableReservedBySelf) {
-                                            if (tableHasBeenReserved && hypeDocument.currentDirectionForTimelineNamed("Table " + tableIDReserved + " Reserved (By You)") < 1) {
+                                            if (tableHasBeenReserved && tableIDReserved !== 0 && hypeDocument.currentDirectionForTimelineNamed("Table " + tableIDReserved + " Reserved (By You)") < 1) {
                                                 hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
                                             }
 
@@ -248,7 +248,7 @@
                                         Table2Text.style.opacity = 0.0;
 
                                         if (isTableReservedBySelf) {
-                                            if (tableHasBeenReserved && hypeDocument.currentDirectionForTimelineNamed("Table " + tableIDReserved + " Reserved (By You)") < 1) {
+                                            if (tableHasBeenReserved && tableIDReserved !== 0 && hypeDocument.currentDirectionForTimelineNamed("Table " + tableIDReserved + " Reserved (By You)") < 1) {
                                                 hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
                                             }
 
@@ -278,7 +278,7 @@
                                         Table3Text.style.opacity = 0.0;
 
                                         if (isTableReservedBySelf) {
-                                            if (tableHasBeenReserved && hypeDocument.currentDirectionForTimelineNamed("Table " + tableIDReserved + " Reserved (By You)") < 1) {
+                                            if (tableHasBeenReserved && tableIDReserved !== 0 && hypeDocument.currentDirectionForTimelineNamed("Table " + tableIDReserved + " Reserved (By You)") < 1) {
                                                 hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
                                             }
 
@@ -308,7 +308,7 @@
                                         Table4Text.style.opacity = 0.0;
 
                                         if (isTableReservedBySelf) {
-                                            if (tableHasBeenReserved && hypeDocument.currentDirectionForTimelineNamed("Table " + tableIDReserved + " Reserved (By You)") < 1) {
+                                            if (tableHasBeenReserved && tableIDReserved !== 0 && hypeDocument.currentDirectionForTimelineNamed("Table " + tableIDReserved + " Reserved (By You)") < 1) {
                                                 hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
                                             }
 
