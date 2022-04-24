@@ -101,11 +101,23 @@
                     let seconds = today.getSeconds();
 
                     if (dd < 10) {
-                        dd = '0' + dd
+                        dd = '0' + dd;
                     }
 
                     if (mm < 10) {
-                        mm = '0' + mm
+                        mm = '0' + mm;
+                    }
+
+                    if (hours < 10) {
+                        hours = '0' + hours;
+                    }
+
+                    if (minutes < 10) {
+                        minutes = '0' + minutes;
+                    }
+
+                    if (seconds < 10) {
+                        seconds = '0' + seconds;
                     }
 
                     let todayWithoutTime = yyyy + '-' + mm + '-' + dd;
@@ -462,7 +474,7 @@
 	<!-- copy these lines to your document: -->
 
 	<div id="default_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:100%;height:100%;overflow:hidden;">
-		<script type="text/javascript" charset="utf-8" src="Default.hyperesources/default_hype_generated_script.js?34597"></script>
+		<script type="text/javascript" charset="utf-8" src="Default.hyperesources/default_hype_generated_script.js?46466"></script>
 	</div>
 
 	<!-- end copy -->
