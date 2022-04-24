@@ -145,7 +145,7 @@
                     let currentTimeAndDateTableReserveStatus = [false, false, false, false];
 
                     let previousTableIDReserved = 0;
-                    if (tableIDReserved !== 0) {
+                    if (tableIDReserved !== 0 || tableDateAndTimeReserved !== "") {
                         previousTableIDReserved = tableIDReserved;
                         tableHasBeenReserved = false;
                         tableDateAndTimeReserved = "";
