@@ -11,7 +11,10 @@ namespace CSC_410_Team_Project_Restaurant
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["UserName"] == null && Session["Password"] == null)
+            {
+                Response.Redirect("LoginPage.aspx");
+            }
         }
 
         protected void GridView1_RowDeleted(object sender, GridViewDeletedEventArgs e)
@@ -23,7 +26,7 @@ namespace CSC_410_Team_Project_Restaurant
             }
             else if (e.AffectedRows == 0)
             {
-                lblStatus.Text = "Delete failed. Someone else changed or deleted this student.";
+                lblStatus.Text = "Delete failed. Someone else changed or deleted this Menu Item.";
             }
         }
 
@@ -31,12 +34,12 @@ namespace CSC_410_Team_Project_Restaurant
         {
             if (e.Exception != null)
             {
-                lblStatus.Text = "Unable to delete. " + e.Exception.Message;
+                lblStatus.Text = "Unable to update. " + e.Exception.Message;
                 e.ExceptionHandled = true;
             }
             else if (e.AffectedRows == 0)
             {
-                lblStatus.Text = "Delete failed. Someone else changed or deleted this student.";
+                lblStatus.Text = "Update failed. Someone else changed or deleated this Menu Item.";
             }
         }
 
@@ -69,9 +72,10 @@ namespace CSC_410_Team_Project_Restaurant
                 {
                     lblStatus.Text = "Insert failed: " + insertException.InnerException.Message;
                 }
-            }catch (FormatException formatException)
+            }
+            catch (FormatException fe)
             {
-                lblStatus.Text = "You must enter integer values for itemPrice and itemID";
+                lblStatus.Text = "You must enter integer values for ID and Price";
             }
 
 
