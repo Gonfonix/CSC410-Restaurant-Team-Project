@@ -37,8 +37,8 @@
 
         <br />
         <br />
-        <div class="grid">
-            <form id="form1" runat="server">
+        <form id="form2" runat="server">
+            <div class="grid">
                 <asp:GridView ID="gvMenu" runat="server" DataSourceID="sdsMenu" AutoGenerateColumns="False" AllowSorting="True" BackColor="White" BorderColor="Black" BorderWidth="2px" ForeColor="Black" BorderStyle="Solid" Font-Names="Arial" Font-Size="Large">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
@@ -50,8 +50,102 @@
                     <RowStyle HorizontalAlign="Center" />
                 </asp:GridView>
                 <asp:SqlDataSource ID="sdsMenu" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" 
-                    SelectCommand="SELECT [ItemName], [ItemDescription], [ItemPrice] FROM [MenuItem] ORDER BY [ItemName], [ItemPrice]"></asp:SqlDataSource>
-            </form>
-        </div>
+                    SelectCommand="SELECT [ItemName], [ItemDescription], [ItemPrice] FROM [MenuItem] ORDER BY [ItemName], [ItemPrice]"></asp:SqlDataSource>            
+            </div>
+            <br />
+            <br />
+
+            <div class="restaurantInfo">
+                <asp:ListView ID="lvInfo" runat="server" DataSourceID="sdsInfo" DataKeyNames="Address">
+                    <AlternatingItemTemplate>
+                        <span style="">Address:
+                        <asp:Label ID="AddressLabel" runat="server" Text='<%# Eval("Address") %>' />
+                        <br />
+                        PhoneNumber:
+                        <asp:Label ID="PhoneNumberLabel" runat="server" Text='<%# Eval("PhoneNumber") %>' />
+                        <br />
+                        OpeningTime:
+                        <asp:Label ID="OpeningTimeLabel" runat="server" Text='<%# Eval("OpeningTime") %>' />
+                        <br />
+                        ClosingTime:
+                        <asp:Label ID="ClosingTimeLabel" runat="server" Text='<%# Eval("ClosingTime") %>' />
+                        <br />
+<br /></span>
+                    </AlternatingItemTemplate>
+                    <EditItemTemplate>
+                        <span style="">Address:
+                        <asp:Label ID="AddressLabel1" runat="server" Text='<%# Eval("Address") %>' />
+                        <br />
+                        PhoneNumber:
+                        <asp:TextBox ID="PhoneNumberTextBox" runat="server" Text='<%# Bind("PhoneNumber") %>' />
+                        <br />
+                        OpeningTime:
+                        <asp:TextBox ID="OpeningTimeTextBox" runat="server" Text='<%# Bind("OpeningTime") %>' />
+                        <br />
+                        ClosingTime:
+                        <asp:TextBox ID="ClosingTimeTextBox" runat="server" Text='<%# Bind("ClosingTime") %>' />
+                        <br />
+                        <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
+                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
+                        <br /><br /></span>
+                    </EditItemTemplate>
+                    <EmptyDataTemplate>
+                        <span>No data was returned.</span>
+                    </EmptyDataTemplate>
+                    <InsertItemTemplate>
+                        <span style="">Address:
+                        <asp:TextBox ID="AddressTextBox" runat="server" Text='<%# Bind("Address") %>' />
+                        <br />PhoneNumber:
+                        <asp:TextBox ID="PhoneNumberTextBox" runat="server" Text='<%# Bind("PhoneNumber") %>' />
+                        <br />OpeningTime:
+                        <asp:TextBox ID="OpeningTimeTextBox" runat="server" Text='<%# Bind("OpeningTime") %>' />
+                        <br />ClosingTime:
+                        <asp:TextBox ID="ClosingTimeTextBox" runat="server" Text='<%# Bind("ClosingTime") %>' />
+                        <br />
+                        <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
+                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
+                        <br /><br /></span>
+                    </InsertItemTemplate>
+                    <ItemTemplate>
+                        <span style="">Address:
+                        <asp:Label ID="AddressLabel" runat="server" Text='<%# Eval("Address") %>' />
+                        <br />
+                        PhoneNumber:
+                        <asp:Label ID="PhoneNumberLabel" runat="server" Text='<%# Eval("PhoneNumber") %>' />
+                        <br />
+                        OpeningTime:
+                        <asp:Label ID="OpeningTimeLabel" runat="server" Text='<%# Eval("OpeningTime") %>' />
+                        <br />
+                        ClosingTime:
+                        <asp:Label ID="ClosingTimeLabel" runat="server" Text='<%# Eval("ClosingTime") %>' />
+                        <br />
+<br /></span>
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <div id="itemPlaceholderContainer" runat="server" style="">
+                            <span runat="server" id="itemPlaceholder" />
+                        </div>
+                        <div style="">
+                        </div>
+                    </LayoutTemplate>
+                    <SelectedItemTemplate>
+                        <span style="">Address:
+                        <asp:Label ID="AddressLabel" runat="server" Text='<%# Eval("Address") %>' />
+                        <br />
+                        PhoneNumber:
+                        <asp:Label ID="PhoneNumberLabel" runat="server" Text='<%# Eval("PhoneNumber") %>' />
+                        <br />
+                        OpeningTime:
+                        <asp:Label ID="OpeningTimeLabel" runat="server" Text='<%# Eval("OpeningTime") %>' />
+                        <br />
+                        ClosingTime:
+                        <asp:Label ID="ClosingTimeLabel" runat="server" Text='<%# Eval("ClosingTime") %>' />
+                        <br />
+<br /></span>
+                    </SelectedItemTemplate>
+                </asp:ListView>
+                <asp:SqlDataSource ID="sdsInfo" runat="server" ConnectionString="<%$ ConnectionStrings:RestaurantConnectionString %>" SelectCommand="SELECT [Address], [PhoneNumber], [OpeningTime], [ClosingTime] FROM [RestaurantInfo]"></asp:SqlDataSource>
+            </div>
+        </form>
     </body>
 </html>
