@@ -57,10 +57,11 @@ namespace CSC_410_Team_Project_Restaurant
                         sdsForgotPassword.UpdateCommand = "UPDATE Employee SET Password = '" + txtPassword.Text + "' WHERE UserName = '" + txtUserName.Text + "'";
                         if (sdsForgotPassword.Update() > 0)
                         {
-                            Response.Write("Updated Password for Employee");
+                            //Response.Write("Updated Password for Employee");
                             Session["UserName"] = txtUserName.Text;
                             Session["Password"] = txtPassword.Text;
 
+                            Response.Redirect("AdminPage.aspx");
                         }
 
                     }
@@ -69,9 +70,12 @@ namespace CSC_410_Team_Project_Restaurant
                         sdsForgotPassword.UpdateCommand = "UPDATE Customer SET Password = '" + txtPassword.Text + "' WHERE UserName = '" + txtUserName.Text + "'";
                         if (sdsForgotPassword.Update() > 0)
                         {
-                            Response.Write("Updated Password for Customer");
+                            //Response.Write("Updated Password for Customer");
                             Session["UserName"] = txtUserName.Text;
                             Session["Password"] = txtPassword.Text;
+
+                            //Response.Redirect("Reservation.aspx");
+                            Response.Redirect("Resveration.aspx");
                         }
                     }
                 }
