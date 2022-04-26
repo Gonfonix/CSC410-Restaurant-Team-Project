@@ -84,6 +84,9 @@
     <Content Include="Image\RestaurantLogo.png" />
     <Content Include="Image\Room.jpg" />
     <Content Include="Image\TacoPalace.jpg" />
+    <Content Include="js\blank.gif" />
+    <Content Include="js\default_hype_generated_script.js" />
+    <Content Include="js\PIE.htc" />
     <Content Include="LoginPage.aspx" />
     <Content Include="MenuPage.aspx" />
     <Content Include="OurValues.aspx" />
