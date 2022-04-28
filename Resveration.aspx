@@ -16,7 +16,6 @@
 			height:100%;
 		}
 	</style>
-	<!-- copy these lines to your document head: -->
 
 	<meta name="viewport" content="user-scalable=yes, width=1039" />
 	
@@ -25,7 +24,7 @@
         let tableIDReserved = 0; // The table number which has been reserved; 0 means nothing reserved.
         let tableDateAndTimeReserved = ""; // The date and time the table has been reserved; "" means nothing reserved.
         let tableHasBeenReserved = false; // If true, a table has been reserved successfully.
-        let tableReserveStatus = [false, false, false, false]; // The status of each table if they have been reserved by anyone else yet; false means unreserved and true means reserved.
+        let tableReserveStatus = [false, false, false, false, false]; // The status of each table if they have been reserved by anyone else yet; false means unreserved and true means reserved.
         let tablesReserved = []; // The current tables reserved (includes also dates and times). Example: other|Table1|2022-04-23T09:00 (other/self indicates if the reservation is yours or another user's reservation).
 
         /*
@@ -53,11 +52,19 @@
             hypeDocument.loadCurrentReservations = function () {
                 try {
                     // Test Data
-                    tablesReserved.push("self|Table3|2022-04-25T09:00");
-                    tablesReserved.push("other|Table1|2022-04-25T09:00");
-                    tablesReserved.push("other|Table4|2022-04-25T09:00");
-                    tablesReserved.push("other|Table2|2022-04-25T09:15");
-                    tablesReserved.push("other|Table1|2022-04-26T09:00");
+                    tablesReserved.push("self|Table3|2022-04-28T11:00");
+                    tablesReserved.push("other|Table1|2022-04-28T11:00");
+                    tablesReserved.push("other|Table4|2022-04-28T11:00");
+                    tablesReserved.push("other|Table2|2022-04-28T11:00");
+                    tablesReserved.push("other|Table1|2022-04-29T09:00");
+
+                    tablesReserved.push("other|Room1|2022-05-02T10:15");
+                    tablesReserved.push("other|Table3|2022-05-02T10:15");
+                    tablesReserved.push("other|Table1|2022-05-02T10:15");
+                    tablesReserved.push("other|Table4|2022-05-02T10:15");
+
+                    //tablesReserved.push("self|Room1|2022-05-03T10:15");
+                    tablesReserved.push("other|Table2|2022-05-03T10:15");
 
                     /*
                      * For some reason, the reservation timelines are bugged once they run... therefore, we will set their times then play them all in reverse to "fix" them.
@@ -71,6 +78,9 @@
                         hypeDocument.startTimelineNamed("Table " + i + " Reserved", hypeDocument.kDirectionReverse);
                         hypeDocument.startTimelineNamed("Table " + i + " Reserved (By You)", hypeDocument.kDirectionReverse);
                     }
+
+                    hypeDocument.goToTimeInTimelineNamed(1, "RoomReserved");
+                    hypeDocument.startTimelineNamed("RoomReserved", hypeDocument.kDirectionReverse);
 
                     // Setup the reservation screen based on gathered data.
                     hypeDocument.dateAndTimeSelected(null, false);
@@ -142,14 +152,14 @@
                     }
 
                     let foundTableReservedBySelf = false; // can be removed.
-                    let currentTimeAndDateTableReserveStatus = [false, false, false, false];
+                    let currentTimeAndDateTableReserveStatus = [false, false, false, false, false];
 
                     let previousTableIDReserved = 0;
                     if (tableIDReserved !== 0 || tableDateAndTimeReserved !== "") {
                         previousTableIDReserved = tableIDReserved;
                         tableHasBeenReserved = false;
                         tableDateAndTimeReserved = "";
-                        reserveTableButton.innerHTML = "Reserve Table";
+                        reserveTableButton.innerHTML = "Reserve Table/Room";
                         switch (tableIDReserved) {
                             case 1:
                                 if (!tableReserveStatus[0]) {
@@ -208,18 +218,25 @@
 
                         reserveTableButton.style.pointerEvents = "auto";
 
+                        statusLabel2.style.pointerEvents = "none";
+                        statusLabel2.innerHTML = "";
+                        statusLabel2.style.opacity = 0.0;
+
                         for (let i = 0; i < tablesReserved.length; i++) {
                             // If the current date and time matches the current reservation, continue.
                             if (reserveDateAndTime.value === tablesReserved[i].split("|")[2]) {
                                 let isTableReservedBySelf = tablesReserved[i].split("|")[0] === "self" ? true : false; // Is the current reservation reserved by the current user?
-                                let tableReserved = tablesReserved[i].split("|")[1]; // Gather the table being reserved.
+                                let tableReserved = tablesReserved[i].split("|")[1]; // Gather the table/room being reserved.
                                 switch (tableReserved) {
                                     case "Table1":
                                         Table1Text.style.opacity = 0.0;
 
                                         if (isTableReservedBySelf) {
-                                            if (tableHasBeenReserved && tableIDReserved !== 0 && hypeDocument.currentDirectionForTimelineNamed("Table " + tableIDReserved + " Reserved (By You)") < 1) {
+                                            if (tableHasBeenReserved && tableIDReserved !== 0 && tableIDReserved !== 5 && hypeDocument.currentDirectionForTimelineNamed("Table " + tableIDReserved + " Reserved (By You)") < 1) {
                                                 hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
+                                            } else if (tableHasBeenReserved && tableIDReserved !== 0 && tableIDReserved === 5 && hypeDocument.currentDirectionForTimelineNamed("RoomReserved") < 1) {
+                                                hypeDocument.startTimelineNamed("RoomReserved", hypeDocument.kDirectionReverse);
+                                                NotReservableTable1.style.opacity = 1.0;
                                             }
 
                                             foundTableReservedBySelf = true;
@@ -235,7 +252,7 @@
                                             }
                                         } else {
                                             if (!tableHasBeenReserved) {
-                                                reserveTableButton.innerHTML = "Reserve Table";
+                                                reserveTableButton.innerHTML = "Reserve Table/Room";
                                             }
                                             if (hypeDocument.currentDirectionForTimelineNamed("Table 1 Reserved") > 0) {
                                                 hypeDocument.startTimelineNamed("Table 1 Reserved", hypeDocument.kDirectionForward);
@@ -248,8 +265,11 @@
                                         Table2Text.style.opacity = 0.0;
 
                                         if (isTableReservedBySelf) {
-                                            if (tableHasBeenReserved && tableIDReserved !== 0 && hypeDocument.currentDirectionForTimelineNamed("Table " + tableIDReserved + " Reserved (By You)") < 1) {
+                                            if (tableHasBeenReserved && tableIDReserved !== 0 && tableIDReserved !== 5 && hypeDocument.currentDirectionForTimelineNamed("Table " + tableIDReserved + " Reserved (By You)") < 1) {
                                                 hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
+                                            } else if (tableHasBeenReserved && tableIDReserved !== 0 && tableIDReserved === 5 && hypeDocument.currentDirectionForTimelineNamed("RoomReserved") < 1) {
+                                                hypeDocument.startTimelineNamed("RoomReserved", hypeDocument.kDirectionReverse);
+                                                NotReservableTable1.style.opacity = 1.0;
                                             }
 
                                             foundTableReservedBySelf = true;
@@ -265,7 +285,7 @@
                                             }
                                         } else {
                                             if (!tableHasBeenReserved) {
-                                                reserveTableButton.innerHTML = "Reserve Table";
+                                                reserveTableButton.innerHTML = "Reserve Table/Room";
                                             }
                                             if (hypeDocument.currentDirectionForTimelineNamed("Table 2 Reserved") > 0) {
                                                 hypeDocument.startTimelineNamed("Table 2 Reserved", hypeDocument.kDirectionForward);
@@ -278,8 +298,11 @@
                                         Table3Text.style.opacity = 0.0;
 
                                         if (isTableReservedBySelf) {
-                                            if (tableHasBeenReserved && tableIDReserved !== 0 && hypeDocument.currentDirectionForTimelineNamed("Table " + tableIDReserved + " Reserved (By You)") < 1) {
+                                            if (tableHasBeenReserved && tableIDReserved !== 0 && tableIDReserved !== 5 && hypeDocument.currentDirectionForTimelineNamed("Table " + tableIDReserved + " Reserved (By You)") < 1) {
                                                 hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
+                                            } else if (tableHasBeenReserved && tableIDReserved !== 0 && tableIDReserved === 5 && hypeDocument.currentDirectionForTimelineNamed("RoomReserved") < 1) {
+                                                hypeDocument.startTimelineNamed("RoomReserved", hypeDocument.kDirectionReverse);
+                                                NotReservableTable1.style.opacity = 1.0;
                                             }
 
                                             foundTableReservedBySelf = true;
@@ -295,7 +318,7 @@
                                             }
                                         } else {
                                             if (!tableHasBeenReserved) {
-                                                reserveTableButton.innerHTML = "Reserve Table";
+                                                reserveTableButton.innerHTML = "Reserve Table/Room";
                                             }
                                             if (hypeDocument.currentDirectionForTimelineNamed("Table 3 Reserved") > 0) {
                                                 hypeDocument.startTimelineNamed("Table 3 Reserved", hypeDocument.kDirectionForward);
@@ -308,8 +331,11 @@
                                         Table4Text.style.opacity = 0.0;
 
                                         if (isTableReservedBySelf) {
-                                            if (tableHasBeenReserved && tableIDReserved !== 0 && hypeDocument.currentDirectionForTimelineNamed("Table " + tableIDReserved + " Reserved (By You)") < 1) {
+                                            if (tableHasBeenReserved && tableIDReserved !== 0 && tableIDReserved !== 5 && hypeDocument.currentDirectionForTimelineNamed("Table " + tableIDReserved + " Reserved (By You)") < 1) {
                                                 hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
+                                            } else if (tableHasBeenReserved && tableIDReserved !== 0 && tableIDReserved === 5 && hypeDocument.currentDirectionForTimelineNamed("RoomReserved") < 1) {
+                                                hypeDocument.startTimelineNamed("RoomReserved", hypeDocument.kDirectionReverse);
+                                                NotReservableTable1.style.opacity = 1.0;
                                             }
 
                                             foundTableReservedBySelf = true;
@@ -325,7 +351,7 @@
                                             }
                                         } else {
                                             if (!tableHasBeenReserved) {
-                                                reserveTableButton.innerHTML = "Reserve Table";
+                                                reserveTableButton.innerHTML = "Reserve Table/Room";
                                             }
                                             if (hypeDocument.currentDirectionForTimelineNamed("Table 4 Reserved") > 0) {
                                                 hypeDocument.startTimelineNamed("Table 4 Reserved", hypeDocument.kDirectionForward);
@@ -334,8 +360,44 @@
                                             currentTimeAndDateTableReserveStatus[3] = true;
                                         }
                                         break;
+                                    case "Room1":
+                                        if (isTableReservedBySelf) {
+                                            if (tableHasBeenReserved && tableIDReserved !== 0 && tableIDReserved !== 5 && hypeDocument.currentDirectionForTimelineNamed("Table " + tableIDReserved + " Reserved (By You)") < 1) {
+                                                hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
+                                            }
+
+                                            foundTableReservedBySelf = true;
+                                            tableIDReserved = 5;
+                                            tableHasBeenReserved = true;
+
+                                            tableDateAndTimeReserved = "self|Room" + (tableIDReserved - 4) + "|" + reserveDateAndTime.value; // Record the date and time of the reservation for the room reserved by the user.
+
+                                            reserveTableButton.innerHTML = "Unreserve Room";
+
+                                            RoomReservedText.style.opacity = 0.0;
+                                            RoomReservedText2.style.opacity = 1.0;
+                                            NotReservableTable1.style.opacity = 0.0;
+                                            if (hypeDocument.currentDirectionForTimelineNamed("RoomReserved") > 0) {
+                                                hypeDocument.startTimelineNamed("RoomReserved", hypeDocument.kDirectionForward);
+                                            }
+                                        } else {
+                                            if (!tableHasBeenReserved) {
+                                                reserveTableButton.innerHTML = "Reserve Table/Room";
+                                            }
+
+                                            RoomReservedText.style.opacity = 1.0;
+                                            RoomReservedText2.style.opacity = 0.0;
+                                            NotReservableTable1.style.opacity = 0.0;
+
+                                            if (hypeDocument.currentDirectionForTimelineNamed("RoomReserved") > 0) {
+                                                hypeDocument.startTimelineNamed("RoomReserved", hypeDocument.kDirectionForward);
+                                            }
+                                            tableReserveStatus[4] = true;
+                                            currentTimeAndDateTableReserveStatus[4] = true;
+                                        }
+                                        break;
                                     default:
-                                        break; // No valid table for timeslot.
+                                        break; // No valid table/room for timeslot.
                                 }
                             }
                         }
@@ -353,13 +415,23 @@
                     }
 
                     if (tableIDReserved !== previousTableIDReserved && previousTableIDReserved !== 0) {
-                        hypeDocument.startTimelineNamed("Table " + previousTableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
+                        if (previousTableIDReserved === 5 && RoomReservedText.style.opacity != 1) {
+                            hypeDocument.startTimelineNamed("RoomReserved", hypeDocument.kDirectionReverse);
+                            NotReservableTable1.style.opacity = 1.0;
+                        } else if (previousTableIDReserved !== 5) {
+                            hypeDocument.startTimelineNamed("Table " + previousTableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
+                        }
                     }
 
                     for (let i = 0; i < currentTimeAndDateTableReserveStatus.length; i++) {
                         if (!currentTimeAndDateTableReserveStatus[i] && tableReserveStatus[i]) {
                             tableReserveStatus[i] = false;
-                            hypeDocument.startTimelineNamed("Table " + (i + 1) + " Reserved", hypeDocument.kDirectionReverse);
+                            if (i + 1 === 5 && tableIDReserved !== 5) {
+                                hypeDocument.startTimelineNamed("RoomReserved", hypeDocument.kDirectionReverse);
+                                NotReservableTable1.style.opacity = 1.0;
+                            } else if (i + 1 !== 5) {
+                                hypeDocument.startTimelineNamed("Table " + (i + 1) + " Reserved", hypeDocument.kDirectionReverse);
+                            }
                             switch (i + 1) {
                                 case 1:
                                     if (tableIDReserved !== i + 1) {
@@ -396,17 +468,532 @@
             }
 
             /*
-               * The Function Called When Unreserving any Tables.
+               * The Function Called When Confirming Reservations.
             */
-            hypeDocument.unReserveAnyTables = function () {
+            hypeDocument.confirmReservation = function (hypeDocument, element, event) {
+                // Make sure the time slot is still valid (time has not passed)
+                let today = new Date();
+                let dateAndTimeSelectedFromSelector = new Date(reserveDateAndTime.value);
 
+                let dd = today.getDate();
+                let mm = today.getMonth() + 1;
+                let yyyy = today.getFullYear();
+                let hours = today.getHours();
+                let minutes = today.getMinutes();
+                let seconds = today.getSeconds();
+
+                if (dd < 10) {
+                    dd = '0' + dd;
+                }
+
+                if (mm < 10) {
+                    mm = '0' + mm;
+                }
+
+                if (hours < 10) {
+                    hours = '0' + hours;
+                }
+
+                if (minutes < 10) {
+                    minutes = '0' + minutes;
+                }
+
+                if (seconds < 10) {
+                    seconds = '0' + seconds;
+                }
+
+                let todayWithoutTime = yyyy + '-' + mm + '-' + dd;
+                let todayWithTime = yyyy + '-' + mm + '-' + dd + "T" + hours + ":" + minutes;
+
+                today = new Date(todayWithTime);
+
+                let exitDueToDateAndTimeError = false;
+
+                // If the date and time selected is invalid...
+                if (today > dateAndTimeSelectedFromSelector) {
+                    statusLabel.style.pointerEvents = "auto";
+                    statusLabel.style.color = "red";
+                    statusLabel.style.opacity = 1.0;
+
+                    reserveDateAndTime.value = todayWithTime;
+                    exitDueToDateAndTimeError = true;
+                }
+
+                dateAndTimeSelectedFromSelector = new Date(reserveDateAndTime.value);
+
+                dd = dateAndTimeSelectedFromSelector.getDate();
+                mm = dateAndTimeSelectedFromSelector.getMonth() + 1;
+                yyyy = dateAndTimeSelectedFromSelector.getFullYear();
+
+                if (dd < 10) {
+                    dd = '0' + dd;
+                }
+
+                if (mm < 10) {
+                    mm = '0' + mm;
+                }
+
+                let dateNoTime = yyyy + '-' + mm + '-' + dd;
+
+                let earliestTime = new Date(dateNoTime + "T09:00");
+                let latestTime = new Date(dateNoTime + "T20:30");
+
+                // Check again if the date and time selected is invalid...
+                if (dateAndTimeSelectedFromSelector < earliestTime || dateAndTimeSelectedFromSelector > latestTime || dateAndTimeSelectedFromSelector.getDay() === 6 || dateAndTimeSelectedFromSelector.getDay() === 0) {
+                    // 					if (RestaurantClosedGroup.style.pointerEvents !== "auto") {
+                    // 				    	hypeDocument.startTimelineNamed("RestaurantClosed", hypeDocument.kDirectionForward);
+                    // 				    	
+                    // 				    	RestaurantClosedGroup.style.pointerEvents = "auto";
+                    // 					    RestaurantClosed.style.pointerEvents = "auto";
+                    // 					    RestaurantClosedText.style.pointerEvents = "auto";
+                    // 					    RestaurantClosedTextBackground.style.pointerEvents = "auto";
+                    // 				    }
+                    // 			
+                    // 					if (exitDueToDateAndTimeError) {
+                    // 						statusLabel.style.pointerEvents = "auto";
+                    // 						statusLabel.style.color = "red";
+                    // 						statusLabel.style.opacity = 1.0;
+                    // 						
+                    // 						reserveDateAndTime.value = todayWithTime;
+                    // 					} else {
+                    // 				    	exitDueToDateAndTimeError = true;
+                    // 				    }
+
+                    //reserveTableButton.style.pointerEvents = "none";
+
+                    if (!exitDueToDateAndTimeError) {
+                        exitDueToDateAndTimeError = true;
+                    }
+                }
+
+                // If there are no issues with the selected date and time, then continue...
+                if (!exitDueToDateAndTimeError) {
+                    statusLabel2.style.pointerEvents = "auto";
+                    let tableReservedText;
+
+                    if (tableIDReserved === 5) {
+                        tableReservedText = "Room" + (tableIDReserved - 4);
+                    } else {
+                        tableReservedText = "Table" + tableIDReserved;
+                    }
+
+                    if (tableIDReserved === 0 && !tableHasBeenReserved) {
+                        statusLabel2.innerHTML = "Error: Please Select a Table or Room to Reserve.";
+                        statusLabel2.style.color = "red";
+                        statusLabel2.style.opacity = 1.0;
+                    } else if (tableHasBeenReserved && (tableIDReserved === 0 || tableReservedText === tableDateAndTimeReserved.split("|")[1])) {
+                        // Unreserve any tables/rooms.
+
+                        tablesReserved = tablesReserved.filter(e => e.split("|")[0] !== "self"); // Remove all other reserved tables/rooms from this user.
+
+                        if (tableIDReserved !== 0 && tableIDReserved !== 5) {
+                            hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
+                        } else if (tableIDReserved !== 0) {
+                            hypeDocument.startTimelineNamed("RoomReserved", hypeDocument.kDirectionReverse);
+                            NotReservableTable1.style.opacity = 1.0;
+                        }
+
+                        tableHasBeenReserved = false;
+                        tableDateAndTimeReserved = "";
+                        switch (tableIDReserved) {
+                            case 1:
+                                Table1Text.style.opacity = 1.0;
+                                break;
+                            case 2:
+                                Table2Text.style.opacity = 1.0;
+                                break;
+                            case 3:
+                                Table3Text.style.opacity = 1.0;
+                                break;
+                            case 4:
+                                Table4Text.style.opacity = 1.0;
+                                break;
+                            default:
+                                break;
+                        }
+
+                        if (tableIDReserved === 5) {
+                            statusLabel2.innerHTML = "Room Successfully Unreserved!";
+                        } else {
+                            statusLabel2.innerHTML = "Table Successfully Unreserved!";
+                        }
+                        statusLabel2.style.color = "green";
+                        statusLabel2.style.opacity = 1.0;
+
+                        tableIDReserved = 0;
+
+                        reserveTableButton.innerHTML = "Reserve Table/Room";
+                    } else {
+                        // If a table was reserved previously by this user, then remove it.
+                        tablesReserved = tablesReserved.filter(e => e.split("|")[0] !== "self"); // Remove all other reserved tables from this user.
+
+                        // Reserve the new table/room.
+                        if (tableIDReserved === 5) {
+                            tableDateAndTimeReserved = "self|Room" + (tableIDReserved - 4) + "|" + document.getElementById("reserveDateAndTime").value;
+                        } else {
+                            tableDateAndTimeReserved = "self|Table" + tableIDReserved + "|" + document.getElementById("reserveDateAndTime").value;
+                        }
+
+                        tablesReserved.push(tableDateAndTimeReserved);
+
+                        // POST to server to forward date and time for current user as their reservation, with table number.
+                        tableHasBeenReserved = true;
+
+                        if (tableIDReserved === 5) {
+                            statusLabel2.innerHTML = "Room Successfully Reserved!";
+                            reserveTableButton.innerHTML = "Unreserve Room";
+                        } else {
+                            statusLabel2.innerHTML = "Table Successfully Reserved!";
+                            reserveTableButton.innerHTML = "Unreserve Table";
+                        }
+
+                        statusLabel2.style.color = "green";
+                        statusLabel2.style.opacity = 1.0;
+                    }
+                } else {
+                    hypeDocument.dateAndTimeSelected(null, true);
+                }
             }
 
             /*
-               * The Function Called When Reserving a Table.
+               * The Function Called When Reserving a Table or Room.
             */
-            hypeDocument.reserveTable = function () {
+            hypeDocument.reserveTableAndRoom = function (hypeDocument, element, event) {
+                switch (element.id) {
+                    case "Table1":
+                        if (tableReserveStatus[0] === false) {
+                            if (tableIDReserved === 1) {
+                                hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
+                                tableIDReserved = 0;
+                                //tableDateAndTimeReserved = "";
 
+                                Table1Text.style.opacity = 1.0;
+
+                                if (tableHasBeenReserved) {
+                                    reserveTableButton.innerHTML = "Unreserve All Tables";
+                                }
+                            } else {
+                                if (tableIDReserved !== 0) {
+                                    if (tableIDReserved === 5) {
+                                        hypeDocument.startTimelineNamed("RoomReserved", hypeDocument.kDirectionReverse);
+                                        NotReservableTable1.style.opacity = 1.0;
+                                    } else {
+                                        hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
+                                    }
+
+                                    switch (tableIDReserved) {
+                                        case 1:
+                                            if (!tableReserveStatus[0]) {
+                                                Table1Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        case 2:
+                                            if (!tableReserveStatus[1]) {
+                                                Table2Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        case 3:
+                                            if (!tableReserveStatus[2]) {
+                                                Table3Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        case 4:
+                                            if (!tableReserveStatus[3]) {
+                                                Table4Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                }
+                                tableIDReserved = 1;
+
+                                Table1Text.style.opacity = 0.0;
+                                //tableDateAndTimeReserved = document.getElementById("reserveDateAndTime").value;
+                                hypeDocument.startTimelineNamed("Table 1 Reserved (By You)", hypeDocument.kDirectionForward);
+
+                                let tableReservedText = "Table" + tableIDReserved;
+                                if (tableHasBeenReserved && tableReservedText === tableDateAndTimeReserved.split("|")[1]) {
+                                    reserveTableButton.innerHTML = "Unreserve Table";
+                                } else {
+                                    reserveTableButton.innerHTML = "Reserve Table/Room";
+                                }
+                            }
+                        }
+                        break;
+                    case "Table2":
+                        if (tableReserveStatus[1] === false) {
+                            if (tableIDReserved === 2) {
+                                hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
+                                tableIDReserved = 0;
+                                //tableDateAndTimeReserved = "";
+
+                                Table2Text.style.opacity = 1.0;
+
+                                if (tableHasBeenReserved) {
+                                    reserveTableButton.innerHTML = "Unreserve All Tables";
+                                }
+                            } else {
+                                if (tableIDReserved !== 0) {
+                                    if (tableIDReserved === 5) {
+                                        hypeDocument.startTimelineNamed("RoomReserved", hypeDocument.kDirectionReverse);
+                                        NotReservableTable1.style.opacity = 1.0;
+                                    } else {
+                                        hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
+                                    }
+
+                                    switch (tableIDReserved) {
+                                        case 1:
+                                            if (!tableReserveStatus[0]) {
+                                                Table1Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        case 2:
+                                            if (!tableReserveStatus[1]) {
+                                                Table2Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        case 3:
+                                            if (!tableReserveStatus[2]) {
+                                                Table3Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        case 4:
+                                            if (!tableReserveStatus[3]) {
+                                                Table4Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                }
+                                tableIDReserved = 2;
+
+                                Table2Text.style.opacity = 0.0;
+                                //tableDateAndTimeReserved = document.getElementById("reserveDateAndTime").value;
+                                hypeDocument.startTimelineNamed("Table 2 Reserved (By You)", hypeDocument.kDirectionForward);
+
+                                let tableReservedText = "Table" + tableIDReserved;
+                                if (tableHasBeenReserved && tableReservedText === tableDateAndTimeReserved.split("|")[1]) {
+                                    reserveTableButton.innerHTML = "Unreserve Table";
+                                } else {
+                                    reserveTableButton.innerHTML = "Reserve Table/Room";
+                                }
+                            }
+                        }
+                        break;
+                    case "Table3":
+                        if (tableReserveStatus[2] === false) {
+                            if (tableIDReserved === 3) {
+                                hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
+                                tableIDReserved = 0;
+                                //tableDateAndTimeReserved = "";
+
+                                Table3Text.style.opacity = 1.0;
+
+                                if (tableHasBeenReserved) {
+                                    reserveTableButton.innerHTML = "Unreserve All Tables";
+                                }
+                            } else {
+                                if (tableIDReserved !== 0) {
+                                    if (tableIDReserved === 5) {
+                                        hypeDocument.startTimelineNamed("RoomReserved", hypeDocument.kDirectionReverse);
+                                        NotReservableTable1.style.opacity = 1.0;
+                                    } else {
+                                        hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
+                                    }
+
+                                    switch (tableIDReserved) {
+                                        case 1:
+                                            if (!tableReserveStatus[0]) {
+                                                Table1Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        case 2:
+                                            if (!tableReserveStatus[1]) {
+                                                Table2Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        case 3:
+                                            if (!tableReserveStatus[2]) {
+                                                Table3Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        case 4:
+                                            if (!tableReserveStatus[3]) {
+                                                Table4Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                }
+                                tableIDReserved = 3;
+
+                                Table3Text.style.opacity = 0.0;
+                                //tableDateAndTimeReserved = document.getElementById("reserveDateAndTime").value;
+                                hypeDocument.startTimelineNamed("Table 3 Reserved (By You)", hypeDocument.kDirectionForward);
+
+                                let tableReservedText = "Table" + tableIDReserved;
+                                if (tableHasBeenReserved && tableReservedText === tableDateAndTimeReserved.split("|")[1]) {
+                                    reserveTableButton.innerHTML = "Unreserve Table";
+                                } else {
+                                    reserveTableButton.innerHTML = "Reserve Table/Room";
+                                }
+                            }
+                        }
+                        break;
+                    case "Table4":
+                        if (tableReserveStatus[3] === false) {
+                            if (tableIDReserved === 4) {
+                                hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
+                                tableIDReserved = 0;
+                                //tableDateAndTimeReserved = "";
+
+                                Table4Text.style.opacity = 1.0;
+
+                                if (tableHasBeenReserved) {
+                                    reserveTableButton.innerHTML = "Unreserve All Tables";
+                                }
+                            } else {
+                                if (tableIDReserved !== 0) {
+                                    if (tableIDReserved === 5) {
+                                        hypeDocument.startTimelineNamed("RoomReserved", hypeDocument.kDirectionReverse);
+                                        NotReservableTable1.style.opacity = 1.0;
+                                    } else {
+                                        hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
+                                    }
+
+                                    switch (tableIDReserved) {
+                                        case 1:
+                                            if (!tableReserveStatus[0]) {
+                                                Table1Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        case 2:
+                                            if (!tableReserveStatus[1]) {
+                                                Table2Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        case 3:
+                                            if (!tableReserveStatus[2]) {
+                                                Table3Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        case 4:
+                                            if (!tableReserveStatus[3]) {
+                                                Table4Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                }
+                                tableIDReserved = 4;
+
+                                Table4Text.style.opacity = 0.0;
+                                //tableDateAndTimeReserved = document.getElementById("reserveDateAndTime").value;
+                                hypeDocument.startTimelineNamed("Table 4 Reserved (By You)", hypeDocument.kDirectionForward);
+
+                                let tableReservedText = "Table" + tableIDReserved;
+                                if (tableHasBeenReserved && tableReservedText === tableDateAndTimeReserved.split("|")[1]) {
+                                    reserveTableButton.innerHTML = "Unreserve Table";
+                                } else {
+                                    reserveTableButton.innerHTML = "Reserve Table/Room";
+                                }
+                            }
+                        }
+                        break;
+                    case "Room1":
+                        if (tableReserveStatus[4] === false) {
+                            if (tableIDReserved === 5) {
+                                hypeDocument.startTimelineNamed("RoomReserved", hypeDocument.kDirectionReverse);
+                                tableIDReserved = 0;
+
+                                NotReservableTable1.style.opacity = 1.0;
+
+                                if (tableHasBeenReserved) {
+                                    reserveTableButton.innerHTML = "Unreserve All Rooms";
+                                }
+                            } else {
+                                if (tableIDReserved !== 0) {
+                                    if (tableIDReserved === 5) {
+                                        hypeDocument.startTimelineNamed("RoomReserved", hypeDocument.kDirectionReverse);
+                                        NotReservableTable1.style.opacity = 1.0;
+                                    } else {
+                                        hypeDocument.startTimelineNamed("Table " + tableIDReserved + " Reserved (By You)", hypeDocument.kDirectionReverse);
+                                    }
+
+                                    switch (tableIDReserved) {
+                                        case 1:
+                                            if (!tableReserveStatus[0]) {
+                                                Table1Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        case 2:
+                                            if (!tableReserveStatus[1]) {
+                                                Table2Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        case 3:
+                                            if (!tableReserveStatus[2]) {
+                                                Table3Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        case 4:
+                                            if (!tableReserveStatus[3]) {
+                                                Table4Text.style.opacity = 1.0;
+                                            }
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                }
+                                tableIDReserved = 5;
+
+                                RoomReservedText.style.opacity = 0.0;
+
+                                RoomReservedText2.style.opacity = 1.0;
+
+                                NotReservableTable1.style.opacity = 0.0;
+
+                                hypeDocument.startTimelineNamed("RoomReserved", hypeDocument.kDirectionForward);
+
+                                let tableReservedText = "Room" + (tableIDReserved - 4);
+                                if (tableHasBeenReserved && tableReservedText === tableDateAndTimeReserved.split("|")[1]) {
+                                    reserveTableButton.innerHTML = "Unreserve Room";
+                                } else {
+                                    reserveTableButton.innerHTML = "Reserve Table/Room";
+                                }
+                            }
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            /*
+               * The Function Called on Page Load.
+            */
+            hypeDocument.prepareReservationSystem = function (hypeDocument, element, event) {
+                RestaurantClosedGroup.style.pointerEvents = "none";
+                RestaurantClosed.style.pointerEvents = "none";
+                RestaurantClosedText.style.pointerEvents = "none";
+                RestaurantClosedTextBackground.style.pointerEvents = "none";
+                statusLabel.style.pointerEvents = "none";
+                statusLabel2.style.pointerEvents = "none";
+
+                // 			    Room1.style.pointerEvents = "none";
+                RoomReservedText.style.pointerEvents = "none";
+                RoomReservedText2.style.pointerEvents = "none";
+                RoomReservedTextBackground.style.pointerEvents = "none";
+                // 			    RoomReserved.style.pointerEvents = "none";
+
+                document.getElementById("reserveDateAndTime").setAttribute("min", "1900-01-01T00:00");
+                document.getElementById("reserveDateAndTime").setAttribute("value", "1900-01-01T00:00");
+
+                hypeDocument.loadCurrentReservations();
             }
         }
 
@@ -417,19 +1004,18 @@
         window.HYPE_eventListeners.push({ "type": "HypeDocumentLoad", "callback": callBack });
 	</script>
 
-	<!-- end copy -->
   </head>
   <body>
     <nav>
             <ul>
                 <li>
-                    <a href="MenuPage.aspx">Menu</a>
-                </li>
-                <li>
                     <a href="OurValues.aspx">Our Values</a>
                 </li>
                 <li>
                     <a href="Staff.aspx">Our Team</a>
+                </li>
+                <li>
+                    <a href="Resveration.aspx">Make a Reservation</a>
                 </li>
                 <li>
                     <a href="LoginPage.aspx">Login</a>
@@ -471,17 +1057,9 @@
             </form>
         </div>
 
-	<!-- copy these lines to your document: -->
-
 	<div id="default_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:100%;height:100%;overflow:hidden;">
-		<script type="text/javascript" charset="utf-8" src="js/default_hype_generated_script.js?46466"></script>
+		<script type="text/javascript" charset="utf-8" src="js/default_hype_generated_script.js?61149"></script>
 	</div>
-
-	<!-- end copy -->
-	
-
-
-	<!-- text content for search engines: -->
 
 	<div style="display:none" aria-hidden=true>
 
@@ -518,19 +1096,32 @@ RESERVED
 NOT RESERVABLE</div>
 		<div></div>
 		<div>
+</div>
+		<div>ROOM RESERVED
+(BY YOU)
+</div>
+		<div>ROOM RESERVED
+</div>
+		<div>
 
 
 RESERVED
 (BY YOU)
+</div>
+		<div>Reservation Hours: 9 A.M. - 8:30 P.M. (Close 9.P.M.)
 </div>
 		<div>
 RESERVED
 (BY YOU)
 </div>
+		<div>== Room Reserved</div>
 		<div>
 
 
 NOT RESERVABLE</div>
+		<div>
+
+Reservable Room</div>
 		<div></div>
 		<div></div>
 		<div>
@@ -550,6 +1141,10 @@ reserve it. Lastly, click on the “Reserve Table” button below.
 To unreserve a table, click on the table or unclick it and click on the “Unreserve Table” button below.
 
 Reserving a new table automatically unreserves any others.
+
+To reserve a room, click on the “Reservable Room.”
+
+Reserving a new room automatically unreserves any tables.
 </div>
 		<div>Error: Table Reserved Already
 </div>
@@ -557,15 +1152,11 @@ Reserving a new table automatically unreserves any others.
 </div>
 		<div>
 RESERVED</div>
-		<div>Reserve Table</div>
+		<div>Reserve Table/Room</div>
 		<div>== Table
 Reserved</div>
-		<div>
-</div>
 
 	</div>
-
-	<!-- end text content: -->
 
   </body>
 </html>
